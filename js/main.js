@@ -52,13 +52,11 @@ const ages1 = [
     {"IMG":"assets/Sting.png", "TENMON":"Sting", "GIA":15, "LOAI":"2"},
     {"IMG":"assets/Pepsi.png", "TENMON":"Pepsi", "GIA":15, "LOAI":"2"},
     {"IMG":"assets/BanhSnackBo.png", "TENMON":"Bánh snack bò", "GIA":10, "LOAI":"3"},
-    {"IMG":"assets/BanhSnackKhoaiTay.png", "TENMON":"Bánh snack khoai tây", "GIA":10, "LOAI":"3"}
+    {"IMG":"assets/BanhSnackKhoaiTay.png", "TENMON":"Bánh snack khoai tây", "GIA":10, "LOAI":"3"},
   ];
 
 
-
-
-  buildTable1(ages1)
+buildTable1(ages1)
 function buildTable1(data){
   var tb1 = document.getElementById('idd1')
   for(var i = 0; i < data.length/4; i++)
@@ -69,17 +67,32 @@ function buildTable1(data){
       var tb2 = document.getElementById('id'+i)
       for(var j =i*4; j < 4*i+4; j++)
       {
-          var row2 = `<div class="wrap">
+        if(j<data.length)
+        {
+          var row2 = `<div class="wrap" id="updateDetails${j}">
                           <img src="${data[j].IMG}" alt="Snow" style="width:100%;margin-bottom: 5px;"/>  
                           <label class="lbl">${data[j].GIA}K</label></label>
                           <span style="margin: 15px; font-weight: 600;">${data[j].TENMON}</span>  
                       </div>`
               tb2.innerHTML+=row2
+        } 
       }
+  }
+
+  for(var l = 0; l < data.length; l++)
+  {
+    document.getElementById('updateDetails'+l).addEventListener('click', function onOpen() {
+      if (typeof favDialog.showModal === "function") {
+        favDialog.showModal();
+      } else {
+        alert("The <dialog> API is not supported by this browser");
+      }
+    });
   }
 }
 
-
+//===========================================================================================================
+//===========================================================================================================
 
   function myFunction1() {
     var x =document.getElementById("idd1")
@@ -97,17 +110,32 @@ function buildTable1(data){
         var tb3 ="";
         for(var j =k*4; j < 4*k+4; j++)
         {
-            var row2 = `<div class="wrap">
+          if(j<ages1.length)
+          {
+            var row2 = `<div class="wrap" id="updateDetails${j}">
                           <img src="${ages1[j].IMG}" alt="Snow" style="width:100%;margin-bottom: 5px;"/>  
                           <label class="lbl">${ages1[j].GIA}K</label></label>
                           <span style="margin: 15px; font-weight: 600;">${ages1[j].TENMON}</span>  
                       </div>`
                 tb3+=row2
-                tb2.innerHTML=tb3    
+                tb2.innerHTML=tb3 
+          }     
         }  
     } 
+    for(var l = 0; l < ages1.length; l++)
+    {
+      document.getElementById('updateDetails'+l).addEventListener('click', function onOpen() {
+        if (typeof favDialog.showModal === "function") {
+          favDialog.showModal();
+        } else {
+          alert("The <dialog> API is not supported by this browser");
+        }
+      });
+    }
   }
-  
+
+//===========================================================================================================
+//===========================================================================================================
   var ages2 = [];
           
   for(var i = 0; i < ages1.length; i++)
@@ -139,18 +167,32 @@ function myFunction2() {
         var tb3 ="";
         for(var j =k*4; j < 4*k+4; j++)
         {
-            var row2 = `<div class="wrap">
+          if(j<ages2.length)
+          {    
+            var row2 = `<div class="wrap" id="updateDetails${j}">
                           <img src="${ages2[j].IMG}" alt="Snow" style="width:100%;margin-bottom: 5px;"/>  
                           <label class="lbl">${ages2[j].GIA}K</label></label>
                           <span style="margin: 15px; font-weight: 600;">${ages2[j].TENMON}</span>  
                       </div>`
                 tb3+=row2
-                tb2.innerHTML=tb3    
-        }
-        
+                tb2.innerHTML=tb3       
+          }       
+        }     
     } 
+    for(var l = 0; l < ages2.length; l++)
+    {
+      document.getElementById('updateDetails'+l).addEventListener('click', function onOpen() {
+        if (typeof favDialog.showModal === "function") {
+          favDialog.showModal();
+        } else {
+          alert("The <dialog> API is not supported by this browser");
+        }
+      });
+    }
 }
 
+//===========================================================================================================
+//===========================================================================================================
 var ages3 = [];
           
 for(var i = 0; i < ages1.length; i++)
@@ -182,20 +224,32 @@ function myFunction3() {
       var tb3 ="";
       for(var j =k*4; j < 4*k+4; j++)
       {
-          var row2 = `<div class="wrap">
+        if(j<ages3.length)
+        {
+          var row2 = `<div class="wrap" id="updateDetails${j}">
                         <img src="${ages3[j].IMG}" alt="Snow" style="width:100%;margin-bottom: 5px;"/>  
                         <label class="lbl">${ages3[j].GIA}K</label></label>
                         <span style="margin: 15px; font-weight: 600;">${ages3[j].TENMON}</span>  
                     </div>`
               tb3+=row2
-              tb2.innerHTML=tb3    
-      }
-      
+              tb2.innerHTML=tb3
+        }            
+      }    
   } 
+  for(var l = 0; l < ages3.length; l++)
+  {
+    document.getElementById('updateDetails'+l).addEventListener('click', function onOpen() {
+      if (typeof favDialog.showModal === "function") {
+        favDialog.showModal();
+      } else {
+        alert("The <dialog> API is not supported by this browser");
+      }
+    });
+  }
 }
 
-
-
+//===========================================================================================================
+//===========================================================================================================
 var ages4 = [];
           
 for(var i = 0; i < ages1.length; i++)
@@ -227,14 +281,34 @@ function myFunction4() {
       var tb3 ="";
       for(var j =k*4; j < 4*k+4; j++)
       {
-          var row2 = `<div class="wrap">
+        if(j<ages4.length)
+        {
+          var row2 = `<div class="wrap" id="updateDetails${j}">
                         <img src="${ages4[j].IMG}" alt="Snow" style="width:100%;margin-bottom: 5px;"/>  
                         <label class="lbl">${ages4[j].GIA}K</label></label>
-                        <span style="margin: 15px; font-weight: 600;">${ages4[j].TENMON}</span>  
+                        <span style="margin: 15px; font-weight: 600;">${ages4[j].TENMON}</span>
                     </div>`
               tb3+=row2
-              tb2.innerHTML=tb3    
-      }
-      
+              tb2.innerHTML=tb3 
+        }        
+      }  
   } 
+  for(var l = 0; l < ages4.length; l++)
+  {
+    document.getElementById('updateDetails'+l).addEventListener('click', function onOpen() {
+      if (typeof favDialog.showModal === "function") {
+        favDialog.showModal();
+      } else {
+        alert("The <dialog> API is not supported by this browser");
+      }
+    });
+  }
 }
+
+document.getElementById('btnXN').addEventListener('click', function onOpen() {
+  if (typeof favDialog1.showModal === "function") {
+    favDialog1.showModal();
+  } else {
+    alert("The <dialog> API is not supported by this browser");
+  }
+});

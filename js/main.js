@@ -14,30 +14,38 @@ function buildTable(data){
   var tb = document.getElementById('myTB')
   for(var i = 0; i < data.length; i++)
   {
-    var row = `<tr>
-                  <td>${data[i].STT}</td>
-                  <td>${data[i].TENMON}</td>
-                  <td>${data[i].SOLUONG}</td>
-                  <td>${data[i].GIA} k</td>
-              </tr>`
+    var row = `<tr onMouseOver="this.bgColor = 'lightcoral'"
+                  onMouseOut ="this.bgColor = ''">
+                  <td >${ListOrder[i].STT}</td>
+                  <td >${ListOrder[i].TENMON}</td>
+                  <td >${ListOrder[i].SOLUONG}</td>
+                  <td >${ListOrder[i].GIA} k</td>
+              </tr>
+              <tr class="more-info">
+                <td colspan="4" style="background-color: white; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);">
+                  <button class="insertBtn5" >Xóa</button>
+                  <button class="insertBtn6" >Sửa</button>
+                </td>
+              </tr>
+              `
         tb.innerHTML+=row
   }
 }
+$(document).ready(function() {
+  $('tr').click(function() {
+    $(this).next('.more-info').slideToggle('fast');
+  });
+});
 
-updateSubTotal(); 
-
-function updateSubTotal() {
-  var table = document.getElementById("myTB");
-  let subTotal = Array.from(table.rows).slice(0).reduce((total, row) => {
-    return total + parseInt(row.cells[2].innerHTML);
-  }, 0);
-  let subTotal2 = Array.from(table.rows).slice(0).reduce((total, row) => {
-    return total + parseInt(row.cells[3].innerHTML);
-  }, 0);
-  document.getElementById("val1").innerHTML = subTotal;
-  document.getElementById("val2").innerHTML = subTotal2 +"k";
+var tosubTotal = 0;
+var subTotal2 = 0;
+for(var i =0;i<ListOrder.length;i++)
+{
+    tosubTotal+=ListOrder[i].SOLUONG
+    subTotal2+=ListOrder[i].GIA
 }
-
+document.getElementById("val1").innerHTML = String(tosubTotal);
+document.getElementById("val2").innerHTML = String(subTotal2)+"K";
 
 
 const ages1 = [

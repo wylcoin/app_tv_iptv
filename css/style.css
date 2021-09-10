@@ -69,13 +69,15 @@
   width: 100%;
   margin-bottom: 1rem;
   background-color: transparent;
+  border: none;
+  border-collapse: collapse;
 }
 
 .table th,
 .table td {
   padding: 0.75rem;
   vertical-align: top;
-  /* border-top: 1px solid #dee2e6; */
+  border: none;
 }
 
 .table thead th {
@@ -124,8 +126,38 @@
   border: none;
 }
 
+.more-info {
+  display: none;
+}
 
+.insertBtn6 {   
+  border: none;
+  color: white;
+  background-color: red;
+  font-size: 13px;
+  width: 70px;
+  height: 30px;
+  font-weight: 600;
+  margin-left: 10px;
+}
+.insertBtn6:hover {
+  background-color: white;
+  color: red;
+  border: 1px solid red;
+}
 
-
-
-
+.insertBtn5 {   
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  color: rgba(0, 0, 0, 0.5);
+  background-color: white;
+  font-size: 13px;
+  width: 70px;
+  height: 30px;
+  font-weight: 600;
+  margin-left: 186px;
+}
+.insertBtn5:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+  color: white;
+  border: none;
+}

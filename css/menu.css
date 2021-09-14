@@ -1,0 +1,20 @@
+.wrap
+{
+  background: #FFFFFF;
+  border-radius: 5px;
+  height: 220px ;
+  width: 220px;
+  margin: 20px 0 0 20px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  position: relative;
+}
+.wrap:hover
+{
+  border: 3px solid red;
+  height: 214px ;
+  width: 214px;
+}
+.lblTitle{
+    width: 100%;
+    text-align: center;
+}

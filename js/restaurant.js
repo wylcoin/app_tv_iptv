@@ -1,15 +1,10 @@
 const inf = [
-  {"IMG":"assets/VTV1.png", "TEN":"VTV1"},
-  {"IMG":"assets/VTV3.png", "TEN":"VTV3"},
-  {"IMG":"assets/VTV6.png", "TEN":"VTV6"},
-  {"IMG":"assets/Disney.png", "TEN":"Disney"},
-  {"IMG":"assets/Disney.png", "TEN":"Disney"},
-  {"IMG":"assets/VTV1.png", "TEN":"VTV1"},
-  {"IMG":"assets/VTV3.png", "TEN":"VTV3"},
-  {"IMG":"assets/VTV6.png", "TEN":"VTV6"},
-  {"IMG":"assets/Disney.png", "TEN":"Disney"},
-  {"IMG":"assets/Disney.png", "TEN":"Disney"}
-];
+    {"IMG":"assets/lotteria.png", "TEN":"Lotteria", "SANH":"Sảnh A"},
+    {"IMG":"assets/mcdonalds.png", "TEN":"McDonald's", "SANH":"Sảnh A"},
+    {"IMG":"assets/tokyodeli.png", "TEN":"Tokyo Deli", "SANH":"Sảnh A"},
+    {"IMG":"assets/highland.png", "TEN":"Highland", "SANH":"Sảnh A"},
+    {"IMG":"assets/vietcombank.png", "TEN":"ATM Vietcombank", "SANH":"Sảnh A"}
+  ];
 
 
 buildTable1(inf)
@@ -28,6 +23,7 @@ function buildTable1(data){
           var row2 = `<div class="wrap">
                           <img src="${data[j].IMG}" style="width:100%; border:1px solid rgba(0, 0, 0, 0.15)"/>  
                           <p class="stylep" style="font-weight: 600;">${data[j].TEN}</p>                       
+                          <p class="stylep" style="color:gray">${data[j].SANH}</p>  
                       </div>`
               tb2.innerHTML+=row2
         } 

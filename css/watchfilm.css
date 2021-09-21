@@ -1,69 +1,49 @@
-.carousel-container {
-  width: 1280px;
-  margin: 50px auto;
-  min-height: 200px;
-  position: relative;
-}
-
-.carousel-container .carousel-inner {
-  overflow: hidden;
-}
-.carousel-container .track {
-  display: inline-flex;
-  transition: transform 0.5s;
-}
-.carousel-container .card-container {
-  /* 259px */
-  width: 235px; 
-  flex-shrink: 0;
-  height: 400px;
-  padding-right: 15px;
-  box-sizing: border-box;
-}
-.carousel-container .card-container .card {
-  width: 100%;
-  height: 100%;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-}
-.nav button {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  border: 1px solid #aaa;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  cursor: pointer;
-  background:rgba(255, 255, 255, 0.5);
-}
-.nav .prev {
-  left: 5px;
-  display: none;
-}
-.nav .prev.show {
-  display: block;
-}
-.nav .next {
-  right: 5px;
-}
-.nav .next.hide {
-  display: none;
-}
-
 #myInput {
   background-position: 96% 10px; 
   background-repeat: no-repeat; 
   width: 340px;
-  font-size: 13px; 
-  margin-left: 880px;
+  height: 40px;
+  font-size: 14px; 
+  margin: 20px 0 0 680px;
   padding: 0 40px 0 20px;
   border: 1px solid #ddd; 
   border-radius: 40px;
 }
 #myInput:focus{
   outline: none;
+}
+.div2{
+  margin: 0 auto;
+  width: 100%;
+  height: 80px;
+  font-size: 20px;
+  font-weight: 500;
+  display: flex;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.wrap
+{
+background: #FFFFFF;
+border-radius: 5px;
+height: 400px ;
+width: 250px;
+margin: 20px 0 0 20px;
+border: 1px solid rgba(0, 0, 0, 0.15);
+box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+position: relative;
+}
+.wrap:hover
+{
+  background-image: url('assets/selectfilm.svg');
+  background-repeat: no-repeat;
+  border: 2px solid red;
+  height: 398px ;
+  width: 248px;
+
+}
+.stylep{
+width: 100%;
+text-align: center;
+margin:5px 0 0 0
 }

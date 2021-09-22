@@ -37,11 +37,16 @@ position: relative;
 {
   background-image: url('assets/selectfilm.svg');
   background-repeat: no-repeat;
+  background-position: 50% 50%; 
   border: 2px solid red;
   height: 398px ;
   width: 248px;
-
 }
+.wrap:hover img,
+    .wrap.hover img {
+        opacity: 0.4;
+    }
+
 .stylep{
 width: 100%;
 text-align: center;

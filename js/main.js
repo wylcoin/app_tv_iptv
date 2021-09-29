@@ -1,52 +1,109 @@
-var ListOrder = [
-  {"STT":"1.","TENMON": "Cơm chiên dương châu","SOLUONG": 2, "GIA":40},
-  {"STT":"2.", "TENMON":"Cơm rang dưa bò", "SOLUONG":2, "GIA":60},
-  {"STT":"3.", "TENMON":"Cơm chiên trứng", "SOLUONG":1, "GIA":20},
-  {"STT":"4.", "TENMON":"Sting", "SOLUONG":3, "GIA":45},
-  {"STT":"5.", "TENMON":"Pepsi", "SOLUONG":1, "GIA":15},
-  {"STT":"6.", "TENMON":"Nước suối", "SOLUONG":2, "GIA":20},
-  {"STT":"7.", "TENMON":"Bánh snack khoai tây", "SOLUONG":1, "GIA":10},
-  {"STT":"8.", "TENMON":"Bánh bao hấp", "SOLUONG":2, "GIA":30},
-]
+// var ListOrder = [
+//   {"STT":"1.","TENMON": "Cơm chiên dương châu","SOLUONG": 2, "GIA":40},
+//   {"STT":"2.", "TENMON":"Cơm rang dưa bò", "SOLUONG":2, "GIA":60},
+//   {"STT":"3.", "TENMON":"Cơm chiên trứng", "SOLUONG":1, "GIA":20},
+//   {"STT":"4.", "TENMON":"Sting", "SOLUONG":3, "GIA":45},
+//   {"STT":"5.", "TENMON":"Pepsi", "SOLUONG":1, "GIA":15},
+//   {"STT":"6.", "TENMON":"Nước suối", "SOLUONG":2, "GIA":20},
+//   {"STT":"7.", "TENMON":"Bánh snack khoai tây", "SOLUONG":1, "GIA":10},
+//   {"STT":"8.", "TENMON":"Bánh bao hấp", "SOLUONG":2, "GIA":30},
+// ]
 
-buildTable(ListOrder)
-function buildTable(data){
-  var tb = document.getElementById('myTB')
-  for(var i = 0; i < data.length; i++)
-  {
-    var row = `<tr onMouseOver="this.bgColor = 'lightcoral'"
-                  onMouseOut ="this.bgColor = ''">
-                  <td >${ListOrder[i].STT}</td>
-                  <td >${ListOrder[i].TENMON}</td>
-                  <td >${ListOrder[i].SOLUONG}</td>
-                  <td >${ListOrder[i].GIA} k</td>
-              </tr>
-              <tr class="more-info">
-                <td colspan="4" style="background-color: white; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);">
-                  <button class="insertBtn5" >Xóa</button>
-                  <button class="insertBtn6" >Sửa</button>
-                </td>
-              </tr>
-              `
-        tb.innerHTML+=row
-  }
-}
-$(document).ready(function() {
-  $('tr').click(function() {
-    $(this).next('.more-info').slideToggle('fast');
-  });
-});
+// buildTable(ListOrder)
+// function buildTable(data){
+//   var tb = document.getElementById('myTB')
+//   for(var i = 0; i < data.length; i++)
+//   {
+//     var row = `<tr onMouseOver="this.bgColor = 'lightcoral'"
+//                   onMouseOut ="this.bgColor = ''">
+//                   <td >${ListOrder[i].STT}</td>
+//                   <td >${ListOrder[i].TENMON}</td>
+//                   <td >${ListOrder[i].SOLUONG}</td>
+//                   <td >${ListOrder[i].GIA} k</td>
+//               </tr>
+//               <tr class="more-info">
+//                 <td colspan="4" style="background-color: white; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);">
+//                   <button class="insertBtn5" >Xóa</button>
+//                   <button class="insertBtn6" >Sửa</button>
+//                 </td>
+//               </tr>
+//               `
+//         tb.innerHTML+=row
+//   }
+// }
+// $(document).ready(function() {
+//   $('tr').click(function() {
+//     $(this).next('.more-info').slideToggle('fast');
+//   });
+// });
 
-var tosubTotal = 0;
-var subTotal2 = 0;
-for(var i =0;i<ListOrder.length;i++)
-{
-    tosubTotal+=ListOrder[i].SOLUONG
-    subTotal2+=ListOrder[i].GIA
-}
-document.getElementById("val1").innerHTML = String(tosubTotal);
-document.getElementById("val2").innerHTML = String(subTotal2)+"K";
+// var tosubTotal = 0;
+// var subTotal2 = 0;
+// for(var i =0;i<ListOrder.length;i++)
+// {
+//     tosubTotal+=ListOrder[i].SOLUONG
+//     subTotal2+=ListOrder[i].GIA
+// }
+// document.getElementById("val1").innerHTML = String(tosubTotal);
+// document.getElementById("val2").innerHTML = String(subTotal2)+"K";
 
+
+buildTable()
+        function buildTable(){
+            $.ajax({
+                url: 'http://127.0.0.1:50005/api/orderdetail',
+                type: 'GET',
+                dataType: 'json',
+                success: function (data, textStatus, xhr) {
+                    var tb = document.getElementById('myTB')
+                    for(var i = 0; i < data.length; i++)
+                    {
+                        var row = `<tr onMouseOver="this.bgColor = 'lightcoral'"
+                                    onMouseOut ="this.bgColor = ''">
+                                    <td >${i+1}.</td>
+                                    <td >${data[i].name_food}</td>
+                                    <td >${data[i].quantity}</td>
+                                    <td >${data[i].price} k</td>
+                                </tr>
+                                <tr class="more-info">
+                                    <td colspan="4" style="background-color: white; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);">
+                                    <button class="insertBtn5" >Xóa</button>
+                                    <button class="insertBtn6" >Sửa</button>
+                                    </td>
+                                </tr>
+                                `
+                            tb.innerHTML+=row
+                    }
+                },
+            });   
+        }
+
+
+        
+
+        $.ajax({
+                url: 'http://127.0.0.1:50005/api/orderdetail',
+                type: 'GET',
+                dataType: 'json',
+                success: function (data, textStatus, xhr) {
+
+                    $(document).ready(function() {
+                    $('tr').click(function() {
+                        $(this).next('.more-info').slideToggle('fast');
+                    });
+                    });
+                    
+                    var tosubTotal = 0;
+                    var subTotal2 = 0;
+                    for(var i = 0; i < data.length; i++)
+                    {
+                        tosubTotal+=data[i].quantity
+                        subTotal2+=data[i].price
+                    }
+                    document.getElementById("val1").innerHTML = String(tosubTotal);
+                    document.getElementById("val2").innerHTML = String(subTotal2)+"K";
+                },
+            });
 //===========================================================================================================
 //===========================================================================================================
 //===========================================================================================================

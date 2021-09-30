@@ -48,69 +48,163 @@
 // document.getElementById("val2").innerHTML = String(subTotal2)+"K";
 
 
-buildTable()
-        function buildTable(){
+GetListOrderDetailByID()
+function GetListOrderDetailByID(){
+  $.ajax({
+    url: 'http://127.0.0.1:50005/api/orderdetail',
+    type: 'GET',
+    dataType: 'json',
+    success: function (data, textStatus, xhr) {
+      var tb = document.getElementById('myTB')
+      var tb3 ="";
+      for(var i = 0; i < data.length; i++)
+      {
+        var row = `<tr value="${data[i].id_food}"
+                  onMouseOver="this.bgColor = 'lightcoral'"
+                  onMouseOut ="this.bgColor = ''">
+                      <td >${i+1}.</td>
+                      <td >${data[i].name_food}</td>
+                      <td >${data[i].quantity}</td>
+                      <td >${data[i].price} k</td>
+                  </tr>
+                  <tr class="more-info">
+                      <td colspan="4" style="background-color: white; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);">
+                        <button class="insertBtn5" onclick="DeleteOrderDetail()">Xóa</button>
+                        <button class="insertBtn6" >Sửa</button>
+                      </td>
+                  </tr>
+                  `
+                  tb3+=row
+                  tb.innerHTML=tb3
+      }
+    },
+  });
+}
+
+var idord = 0;
+GetValues()
+function GetValues(){
+  $.ajax({
+    url: 'http://127.0.0.1:50005/api/orderdetail',
+    type: 'GET',
+    dataType: 'json',
+    success: function (data, textStatus, xhr) {
+      $(document).ready(function() {
+        $('tr').click(function() {
+          $(this).next('.more-info').slideToggle('fast');
+        });
+      });
+
+      var tosubTotal = 0;
+      var subTotal2 = 0;
+
+      for(var i = 0; i < data.length; i++)
+      {                
+        tosubTotal+=data[i].quantity             
+        subTotal2+=data[i].price             
+        idord=data[i].id_order
+      }
+      document.getElementById("val1").innerHTML = String(tosubTotal);
+      document.getElementById("val2").innerHTML = String(subTotal2)+"K";
+      document.getElementById("val3").innerHTML = "P"+String(idord);
+      },
+    });
+  }
+
+        var text=''
+        function getIDfood(ctrl) {
+            text = ctrl.getElementsByTagName('p')[0].innerHTML;
+        }
+        function insertOrderDetail() {
+            var data = {
+                "id_food": parseInt(text),
+                "id_order": parseInt(idord),
+                "quantity": parseInt($('#sl').val())
+            }
+
             $.ajax({
                 url: 'http://127.0.0.1:50005/api/orderdetail',
-                type: 'GET',
-                dataType: 'json',
-                success: function (data, textStatus, xhr) {
-                    var tb = document.getElementById('myTB')
-                    for(var i = 0; i < data.length; i++)
-                    {
-                        var row = `<tr onMouseOver="this.bgColor = 'lightcoral'"
-                                    onMouseOut ="this.bgColor = ''">
-                                    <td >${i+1}.</td>
-                                    <td >${data[i].name_food}</td>
-                                    <td >${data[i].quantity}</td>
-                                    <td >${data[i].price} k</td>
-                                </tr>
-                                <tr class="more-info">
-                                    <td colspan="4" style="background-color: white; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);">
-                                    <button class="insertBtn5" >Xóa</button>
-                                    <button class="insertBtn6" >Sửa</button>
-                                    </td>
-                                </tr>
-                                `
-                            tb.innerHTML+=row
-                    }
+                headers: {
+                    'Access-Control-Allow-Origin': '*',
+                    'Access-Control-Allow-Credentials': 'true',
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
                 },
-            });   
+                contentType: "application/json; charset=utf-8",
+                type: 'POST',
+                data: JSON.stringify(data),
+                success: function (result) {
+                    //  console.log('success' + result);
+                    console.log(text)
+                     GetListOrderDetailByID();
+                     GetValues();
+                },
+            })
         }
 
 
-        
+        var idfood_d=''
+        $(".table").on('click','tr',function(e){
+            e.preventDefault();
+            idfood_d = $(this).attr('value');
+        });
 
-        $.ajax({
+        function DeleteOrderDetail() {
+            var data1 = {
+                "id_food": parseInt(idfood_d),
+                "id_order": parseInt(idord)
+            }
+            $.ajax({
                 url: 'http://127.0.0.1:50005/api/orderdetail',
-                type: 'GET',
-                dataType: 'json',
-                success: function (data, textStatus, xhr) {
-
-                    $(document).ready(function() {
-                    $('tr').click(function() {
-                        $(this).next('.more-info').slideToggle('fast');
-                    });
-                    });
-                    
-                    var tosubTotal = 0;
-                    var subTotal2 = 0;
-                    for(var i = 0; i < data.length; i++)
-                    {
-                        tosubTotal+=data[i].quantity
-                        subTotal2+=data[i].price
-                    }
-                    document.getElementById("val1").innerHTML = String(tosubTotal);
-                    document.getElementById("val2").innerHTML = String(subTotal2)+"K";
+                headers: {
+                    'Access-Control-Allow-Origin': '*',
+                    'Access-Control-Allow-Credentials': 'true',
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
                 },
-            });
+                contentType: "application/json; charset=utf-8",
+                type: 'DELETE',
+                data: JSON.stringify(data1),
+                success: function (result) {
+                     console.log('success' + result);
+                     GetListOrderDetailByID();
+                     GetValues();
+                },
+            })
+        }
+
+
+        var data2 = {
+            "id_food": 4,
+            "id_order": 2,
+            "quantity": 4
+        }
+        function UpdateOrderDetail() {
+            $.ajax({
+                url: 'http://127.0.0.1:50005/api/orderdetail',
+                headers: {
+                    'Access-Control-Allow-Origin': '*',
+                    'Access-Control-Allow-Credentials': 'true',
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                contentType: "application/json; charset=utf-8",
+                type: 'PUT',
+                data: JSON.stringify(data2),
+                success: function (result) {
+                     console.log('success' + result);
+                     GetListOrderDetailByID();
+                     GetValues();
+                },
+            })
+        }
 //===========================================================================================================
 //===========================================================================================================
 //===========================================================================================================
 //===========================================================================================================
 //===========================================================================================================
 //===========================================================================================================
-        getData()
+getData()
         function getData() {
             $.ajax({
                 url: 'http://127.0.0.1:50005/api/order',
@@ -121,20 +215,21 @@ buildTable()
                     for(var i = 0; i < data.length/4; i++)
                     {
                         var row1 = `<div style="display: flex;" id="id${i}"></div>`
-                        tb1.innerHTML+=row1       
-                        
+                        tb1.innerHTML+=row1
+
                         var tb2 = document.getElementById('id'+i)
                         for(var j =i*4; j < 4*i+4; j++)
                         {
                             if(j<data.length)
                             {
-                            var row2 = `<div class="wrap" id="updateDetails${j}">
-                                            <img src="assets/${data[j].image}" alt="Snow" style="width:100%;margin-bottom: 5px;"/>  
+                            var row2 = `<div class="wrap" id="updateDetails${j}" onclick="getIDfood(this)">
+                                            <p style="display:none">${data[j].id}</p>
+                                            <img src="assets/${data[j].image}" alt="Snow" style="width:100%;margin-bottom: 5px;"/>
                                             <label class="lbl">${data[j].price}K</label></label>
-                                            <span style="margin: 15px; font-weight: 600;">${data[j].name}</span>  
+                                            <span style="margin: 15px; font-weight: 600;">${data[j].name}</span>
                                         </div>`
                                 tb2.innerHTML+=row2
-                            } 
+                            }
                         }
                     }
 
@@ -167,10 +262,10 @@ buildTable()
                     for(var i = 0; i < data.length/4; i++)
                     {
                         var row1 = `<div style="display: flex;" id="id${i}"></div>`
-                        xx+=row1   
-                        x.innerHTML=xx;    
+                        xx+=row1
+                        x.innerHTML=xx;
                     }
-                
+
                     for(var k = 0; k < data.length/4; k++)
                     {
                         var tb2 = document.getElementById('id'+k)
@@ -179,16 +274,17 @@ buildTable()
                         {
                         if(j<data.length)
                         {
-                            var row2 = `<div class="wrap" id="updateDetails${j}">
-                                        <img src="assets/${data[j].image}" alt="Snow" style="width:100%;margin-bottom: 5px;"/>  
+                            var row2 = `<div class="wrap" id="updateDetails${j}" onclick="getIDfood(this)">
+                                        <p style="display:none">${data[j].id}</p>
+                                        <img src="assets/${data[j].image}" alt="Snow" style="width:100%;margin-bottom: 5px;"/>
                                         <label class="lbl">${data[j].price}K</label></label>
-                                        <span style="margin: 15px; font-weight: 600;">${data[j].name}</span>  
+                                        <span style="margin: 15px; font-weight: 600;">${data[j].name}</span>
                                     </div>`
                                 tb3+=row2
-                                tb2.innerHTML=tb3 
-                        }     
-                        }  
-                    } 
+                                tb2.innerHTML=tb3
+                        }
+                        }
+                    }
                     for(var l = 0; l < data.length; l++)
                     {
                     document.getElementById('updateDetails'+l).addEventListener('click', function onOpen() {
@@ -206,7 +302,7 @@ buildTable()
 //===========================================================================================================
 //===========================================================================================================
   var ages2 = [];
-  
+
   $.ajax({
             url: 'http://127.0.0.1:50005/api/order',
             type: 'GET',
@@ -217,15 +313,16 @@ buildTable()
                     if(data[i].id_category=="4")
                     {
                         var element = {};
+                        element.ID=data[i].id;
                         element.IMG = data[i].image;
                         element.TENMON = data[i].name;
                         element.GIA = data[i].price;
                         ages2.push(element);
-                    }     
-                }   
+                    }
+                }
             },
         });
-  
+
 
 function myFunction2() {
     var x =document.getElementById("idd1")
@@ -233,8 +330,8 @@ function myFunction2() {
     for(var i = 0; i < ages2.length/4; i++)
     {
         var row1 = `<div style="display: flex;" id="id${i}"></div>`
-        xx+=row1   
-        x.innerHTML=xx;    
+        xx+=row1
+        x.innerHTML=xx;
     }
 
     for(var k = 0; k < ages2.length/4; k++)
@@ -244,17 +341,18 @@ function myFunction2() {
         for(var j =k*4; j < 4*k+4; j++)
         {
           if(j<ages2.length)
-          {    
-            var row2 = `<div class="wrap" id="updateDetails${j}">
-                          <img src="assets/${ages2[j].IMG}" alt="Snow" style="width:100%;margin-bottom: 5px;"/>  
+          {
+            var row2 = `<div class="wrap" id="updateDetails${j}" onclick="getIDfood(this)">
+                          <p style="display:none">${ages2[j].ID}</p>
+                          <img src="assets/${ages2[j].IMG}" alt="Snow" style="width:100%;margin-bottom: 5px;"/>
                           <label class="lbl">${ages2[j].GIA}K</label></label>
-                          <span style="margin: 15px; font-weight: 600;">${ages2[j].TENMON}</span>  
+                          <span style="margin: 15px; font-weight: 600;">${ages2[j].TENMON}</span>
                       </div>`
                 tb3+=row2
-                tb2.innerHTML=tb3       
-          }       
-        }     
-    } 
+                tb2.innerHTML=tb3
+          }
+        }
+    }
     for(var l = 0; l < ages2.length; l++)
     {
       document.getElementById('updateDetails'+l).addEventListener('click', function onOpen() {
@@ -270,7 +368,7 @@ function myFunction2() {
 //===========================================================================================================
 //===========================================================================================================
 var ages3 = [];
-          
+
 $.ajax({
             url: 'http://127.0.0.1:50005/api/order',
             type: 'GET',
@@ -281,14 +379,15 @@ $.ajax({
                     if(data[i].id_category=="5")
                     {
                         var element = {};
+                        element.ID=data[i].id;
                         element.IMG = data[i].image;
                         element.TENMON = data[i].name;
                         element.GIA = data[i].price;
                         ages3.push(element);
-                    }     
-                }   
+                    }
+                }
             },
-        });  
+        });
 
 function myFunction3() {
   var x =document.getElementById("idd1")
@@ -296,8 +395,8 @@ function myFunction3() {
   for(var i = 0; i < ages3.length/4; i++)
   {
       var row1 = `<div style="display: flex;" id="id${i}"></div>`
-      xx+=row1   
-      x.innerHTML=xx;    
+      xx+=row1
+      x.innerHTML=xx;
   }
 
   for(var k = 0; k < ages3.length/4; k++)
@@ -308,16 +407,17 @@ function myFunction3() {
       {
         if(j<ages3.length)
         {
-          var row2 = `<div class="wrap" id="updateDetails${j}">
-                        <img src="assets/${ages3[j].IMG}" alt="Snow" style="width:100%;margin-bottom: 5px;"/>  
+          var row2 = `<div class="wrap" id="updateDetails${j}" onclick="getIDfood(this)">
+                        <p style="display:none">${ages3[j].ID}</p>
+                        <img src="assets/${ages3[j].IMG}" alt="Snow" style="width:100%;margin-bottom: 5px;"/>
                         <label class="lbl">${ages3[j].GIA}K</label></label>
-                        <span style="margin: 15px; font-weight: 600;">${ages3[j].TENMON}</span>  
+                        <span style="margin: 15px; font-weight: 600;">${ages3[j].TENMON}</span>
                     </div>`
               tb3+=row2
               tb2.innerHTML=tb3
-        }            
-      }    
-  } 
+        }
+      }
+  }
   for(var l = 0; l < ages3.length; l++)
   {
     document.getElementById('updateDetails'+l).addEventListener('click', function onOpen() {
@@ -333,7 +433,7 @@ function myFunction3() {
 //===========================================================================================================
 //===========================================================================================================
 var ages4 = [];
-          
+
 $.ajax({
             url: 'http://127.0.0.1:50005/api/order',
             type: 'GET',
@@ -344,14 +444,15 @@ $.ajax({
                     if(data[i].id_category=="6")
                     {
                         var element = {};
+                        element.ID=data[i].id;
                         element.IMG = data[i].image;
                         element.TENMON = data[i].name;
                         element.GIA = data[i].price;
                         ages4.push(element);
-                    }     
-                }   
+                    }
+                }
             },
-        });   
+        });
 
 function myFunction4() {
   var x =document.getElementById("idd1")
@@ -359,8 +460,8 @@ function myFunction4() {
   for(var i = 0; i < ages4.length/4; i++)
   {
       var row1 = `<div style="display: flex;" id="id${i}"></div>`
-      xx+=row1   
-      x.innerHTML=xx;    
+      xx+=row1
+      x.innerHTML=xx;
   }
 
   for(var k = 0; k < ages4.length/4; k++)
@@ -371,16 +472,17 @@ function myFunction4() {
       {
         if(j<ages4.length)
         {
-          var row2 = `<div class="wrap" id="updateDetails${j}">
-                        <img src="assets/${ages4[j].IMG}" alt="Snow" style="width:100%;margin-bottom: 5px;"/>  
+          var row2 = `<div class="wrap" id="updateDetails${j}" onclick="getIDfood(this)">
+                        <p style="display:none">${ages4[j].ID}</p>
+                        <img src="assets/${ages4[j].IMG}" alt="Snow" style="width:100%;margin-bottom: 5px;"/>
                         <label class="lbl">${ages4[j].GIA}K</label></label>
                         <span style="margin: 15px; font-weight: 600;">${ages4[j].TENMON}</span>
                     </div>`
               tb3+=row2
-              tb2.innerHTML=tb3 
-        }        
-      }  
-  } 
+              tb2.innerHTML=tb3
+        }
+      }
+  }
   for(var l = 0; l < ages4.length; l++)
   {
     document.getElementById('updateDetails'+l).addEventListener('click', function onOpen() {

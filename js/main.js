@@ -47,7 +47,7 @@
 // document.getElementById("val1").innerHTML = String(tosubTotal);
 // document.getElementById("val2").innerHTML = String(subTotal2)+"K";
 
-
+/// Lấy dữ liệu lên table detail
 GetListOrderDetailByID()
 function GetListOrderDetailByID(){
   $.ajax({
@@ -67,20 +67,30 @@ function GetListOrderDetailByID(){
                       <td >${data[i].quantity}</td>
                       <td >${data[i].price} k</td>
                   </tr>
-                  <tr class="more-info">
+                  <tr class="more-info" value="${data[i].id_food}">
                       <td colspan="4" style="background-color: white; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);">
                         <button class="insertBtn5" onclick="DeleteOrderDetail()">Xóa</button>
-                        <button class="insertBtn6" >Sửa</button>
+                        <button class="insertBtn6" id="update${i}">Sửa</button>
                       </td>
                   </tr>
                   `
                   tb3+=row
-                  tb.innerHTML=tb3
+                  tb.innerHTML=tb3                
+      }
+      for(var j = 0;j<data.length;j++)
+      {
+        document.getElementById('update'+j).addEventListener('click', function onOpen() {
+          if (typeof favDialog2.showModal === "function") {
+            favDialog2.showModal();
+          } else {
+            alert("The <dialog> API is not supported by this browser");
+          }
+        });
       }
     },
   });
 }
-
+/// lấy dữ liệu total vs mã phiếu
 var idord = 0;
 GetValues()
 function GetValues(){
@@ -110,7 +120,7 @@ function GetValues(){
       },
     });
   }
-
+// insert dữ chọn món vào table detail
         var text=''
         function getIDfood(ctrl) {
             text = ctrl.getElementsByTagName('p')[0].innerHTML;
@@ -142,11 +152,12 @@ function GetValues(){
             })
         }
 
-
+// xóa món trên bảng table detail
         var idfood_d=''
         $(".table").on('click','tr',function(e){
             e.preventDefault();
             idfood_d = $(this).attr('value');
+            alert(idfood_d);
         });
 
         function DeleteOrderDetail() {
@@ -173,13 +184,15 @@ function GetValues(){
             })
         }
 
-
-        var data2 = {
-            "id_food": 4,
-            "id_order": 2,
-            "quantity": 4
-        }
+// cập nhật số lượng trên table detail
+        
         function UpdateOrderDetail() {
+            var data2 = {
+              "id_food": parseInt(idfood_d),
+              "id_order": parseInt(idord),
+              "quantity": parseInt($('#slud').val())
+            }
+
             $.ajax({
                 url: 'http://127.0.0.1:50005/api/orderdetail',
                 headers: {
@@ -191,7 +204,7 @@ function GetValues(){
                 contentType: "application/json; charset=utf-8",
                 type: 'PUT',
                 data: JSON.stringify(data2),
-                success: function (result) {
+                success: function (result) {               
                      console.log('success' + result);
                      GetListOrderDetailByID();
                      GetValues();
@@ -502,3 +515,5 @@ document.getElementById('btnXN').addEventListener('click', function onOpen() {
     alert("The <dialog> API is not supported by this browser");
   }
 });
+
+

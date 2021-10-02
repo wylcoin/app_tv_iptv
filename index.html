@@ -60,7 +60,7 @@
         <dialog id="favDialog" style="border: 1px solid rgba(0, 0, 0, 0.15); width: 216px; border-radius: 5px;">   
             <form method="dialog">
                 <div style="border: 1px solid rgba(0, 0, 0, 0.15); width:250px; transform: translate(-8%,-50%);">
-                    <P style="margin:30px 0 10px 20px; font-weight: 700; font-size: 20px;" id="ala">Chọn số lượng</p>
+                    <P style="margin:30px 0 10px 20px; font-weight: 700; font-size: 20px;">Chọn số lượng</p>
                 </div>
                 <div style="margin-bottom: 30px;">
                     <input type="text" class="text1" id="sl">
@@ -110,6 +110,21 @@
                 <form method="dialog">
                     <div><img src="assets/check 1.svg" style="margin:30px 0 15px 170px">  </div>
                     <div><p style="font-weight: 600; font-size: 24px; margin: 0 0 30px 100px;">Đặt món thành công</p></div>                    
+                </form>
+              </dialog>
+
+              <dialog id="favDialog2" style="border: 1px solid rgba(0, 0, 0, 0.15); width: 216px; border-radius: 5px;">   
+                <form method="dialog">
+                    <div style="border: 1px solid rgba(0, 0, 0, 0.15); width:250px; transform: translate(-8%,-50%);">
+                        <P style="margin:30px 0 10px 20px; font-weight: 700; font-size: 20px;">Chọn số lượng cập nhật</p>
+                    </div>
+                    <div style="margin-bottom: 30px;">
+                        <input type="text" class="text1" id="slud">
+                    </div>
+                    
+                    <button class="insertBtn4">Hủy</button>
+                    <button class="insertBtn3" onclick="UpdateOrderDetail()">Ok</button>
+            
                 </form>
               </dialog>
               

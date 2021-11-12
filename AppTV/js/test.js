@@ -73,3 +73,4 @@ function GetListOrderDetailByID() {
     });
 }
 
+function add() {}

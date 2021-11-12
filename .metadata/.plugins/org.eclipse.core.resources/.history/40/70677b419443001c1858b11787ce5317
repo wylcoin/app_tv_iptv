@@ -1,0 +1,128 @@
+.wrap
+{
+  background: #FFFFFF;
+  border-radius: 5px;
+  height: 180px ;
+  width: 180px;
+  margin: 20px 0 0 20px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  position: relative;
+}
+.wrap:hover
+{
+  border: 3px solid red;
+  height: 174px ;
+  width: 174px;
+}
+.lblTitle{
+    width: 100%;
+    text-align: center;
+}
+
+.carousel-container {
+  width: 1220px;
+  margin: 50px auto;
+  min-height: 200px;
+  position: relative;
+}
+
+.carousel-container .carousel-inner {
+  overflow: hidden;
+}
+.carousel-container .track {
+  display: inline-flex;
+  transition: 0.5s ;
+  /* transition:2s ease-in-out left; */
+}
+
+.nav button {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 1px solid #aaa;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  background:rgba(179, 176, 176, 0.5);
+}
+.nav .prev {
+  left: 5px;
+  display: none;
+}
+.nav .prev.show {
+  display: block;
+}
+.nav .next {
+  right: 5px;
+}
+.nav .next.hide {
+  display: none;
+}
+
+/* phan slide */
+
+.wrapp{
+  width: 1260px;
+  height: 355px;
+  margin: 50px auto;
+  min-height: 200px;
+  position: relative;
+}
+
+.slide {
+  width: 1260px;
+  height: 355px;
+}
+
+.slidee { 
+  width: 1260px;
+  height: 355px;
+  position: absolute;
+  opacity: 0;
+}
+.nut {
+  position: absolute;  
+  left: 560px;
+  top: 300px;
+}
+.nut ul li {
+  width: 15px;
+  height: 15px;
+  border:2px solid rgba(0, 0, 0, 0.15);
+  display: inline-block;
+  border-radius: 100%;
+  cursor: pointer;
+  margin-left: 5px ;
+}
+
+.nut ul li:hover {
+  background-color: rgba(0, 0, 0, 0.15);
+  border: none;
+  width: 19px;
+  height: 19px;
+}
+.ra{
+  transition: 1.5s;
+  opacity: 1;
+}
+/* div*/
+.div1{
+  margin: 50px auto;
+  position: relative;
+  width: 1260px;
+  font-size: 30px;
+  font-weight: 550;
+}
+.div2{
+  margin: 50px auto;
+  position: relative;
+  width: 100%;
+  height: 40px;
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
+  background-color: #FA8072;
+  color: white;
+  padding-top: 15px;
+}

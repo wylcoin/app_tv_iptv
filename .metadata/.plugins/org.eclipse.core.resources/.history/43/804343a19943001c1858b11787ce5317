@@ -1,6 +1,6 @@
 function getData() {
     $.ajax({
-        url: 'http://127.0.0.1:50005/api/order',
+        url: 'http://115.78.230.192:59025/api/order',
         type: 'GET',
         dataType: 'json',
         success: function (data, textStatus, xhr) {
@@ -38,7 +38,7 @@ function getData() {
 
 function GetListOrderDetailByID() {
     $.ajax({
-        url: 'http://192.168.1.243:50005/api/orderdetail',
+        url: 'http://115.78.230.192:59025/api/orderdetail',
         type: 'GET',
         dataType: 'json',
         success: function (data, textStatus, xhr) {

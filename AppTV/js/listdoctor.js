@@ -44,14 +44,14 @@
 buildTable1()
 function buildTable1(){
     $.ajax({
-      url: 'http://127.0.0.1:50005/api/doctor',
+      url: 'http://115.78.230.192:59025/api/doctor',
       type: 'GET',
       dataType: 'json',
       success: function (data, textStatus, xhr) {
         var tb1 = document.getElementById('idd1')
         for(var i = 0; i < data.length/5; i++)
         {
-            var row1 = `<div style="display: flex;" id="id${i}"></div>`
+            var row1 = '<div style="display: flex;" id="id'+i+'"></div>'
             tb1.innerHTML+=row1       
             
             var tb2 = document.getElementById('id'+i)
@@ -59,11 +59,11 @@ function buildTable1(){
             {
               if(j<data.length)
               {
-                var row2 = '<div class="wrap">
-                                <img src="assets/${data[j].image}" style="width:100%;"/>  
-                                <p class="stylep" style="font-weight: 600;">${data[j].name}</p>                       
-                                <p class="stylep" style="color:gray">${data[j].dname}</p>  
-                            </div>'
+                var row2 = '<div class="wrap">'
+                                +'<img src="assets/'+data[j].image+'" style="width:100%;"/>'  
+                                +'<p class="stylep" style="font-weight: 600;">'+data[j].name+'</p>'                       
+                                +'<p class="stylep" style="color:gray">'+data[j].dname+'</p>'  
+                            +'</div>'
                     tb2.innerHTML+=row2
               } 
             }

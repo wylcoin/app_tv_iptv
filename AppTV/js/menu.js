@@ -17,10 +17,10 @@ var ListOrder = [
     var tb = document.getElementById('MyTB1')
     for(var i = 0; i < data.length; i++)
     {
-      var row = `<div class="wrap" >
-      <img src="${data[i].IMG}" style="width:80px; height:80px;margin: 20px 0 0 50px;"/>
-      <h2 class="lblTitle">${data[i].TEN}</h2>  
-  </div>`
+      var row = '<div class="wrap" >'
+      +'<img src="' + data[i].IMG + '" style="width:80px; height:80px;margin: 20px 0 0 50px;"/>'
+      +'<h2 class="lblTitle">' + data[i].TEN + '</h2>'
+      +'</div>';
           tb.innerHTML+=row
     }
   }
@@ -42,7 +42,7 @@ var ListOrder = [
   next.addEventListener('click', () => {
     index++;
     prev.classList.add('show');
-    track.style.transform = `translateX(-${index * carouselWidth}px)`;
+    track.style.transform = 'translateX(-'+index * carouselWidth+'px)';
     
     if (track.offsetWidth - (index * carouselWidth) < carouselWidth) {
       next.classList.add('hide');
@@ -55,7 +55,7 @@ var ListOrder = [
     if (index === 0) {
       prev.classList.remove('show');
     }
-    track.style.transform = `translateX(-${index * carouselWidth}px)`;
+    track.style.transform = 'translateX(-" + index * carouselWidth + "px)';
   })
   
 
@@ -74,16 +74,16 @@ var ListOrder = [
     var tb = document.getElementById('sli')
     for(var i = 0; i < data.length; i++)
     {
-      var row = `<div class="slidee ra">
-                <img src="${data[i].IMG}" style="width: 100%; height: 100%; border-radius:16px"/>
-            </div>`
+      var row = '<div class="slidee ra">'
+          +'<img src="' + data[i].IMG + '" style="width: 100%; height: 100%; border-radius:16px"/>'
+          +'</div>';
           tb.innerHTML+=row
     }
 
     var nut = document.getElementById('bt')
     for(var j = 0; j < data.length; j++)
     {
-      var row = `<li></li>`
+      var row = '<li></li>'
           nut.innerHTML+=row
     }
   }

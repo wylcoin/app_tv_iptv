@@ -27,21 +27,19 @@
 buildTable()
   function buildTable(){
     $.ajax({
-      url: 'http://127.0.0.1:50005/api/medicalschedule',
+      url: 'http://115.78.230.192:59025/api/medicalschedule',
       type: 'GET',
       dataType: 'json',
       success: function (data, textStatus, xhr) {
         var tb = document.getElementById('myTB')
         for(var i = 0; i < data.length; i++)
         {
-          var row = `<tr onMouseOver="this.bgColor = 'lightcoral'"
-                        onMouseOut ="this.bgColor = ''">
-                        <td >${data[i].time_ms}</td>
-                        <td >${data[i].name_patient}</td>
-                        <td >${data[i].name_bed}</td>
-                        <td >${data[i].name_doctor}</td>
-                    </tr>
-                    `
+          var row = '<tr onMouseOver="this.bgColor = '+lightcoral+'"'
+              + 'onMouseOut ="this.bgColor = "">'+'<td >'+data[i].time_ms+'</td>'
+                        +'<td >'+data[i].name_patient+'</td>'
+                        '<td >'+data[i].name_bed+'</td>'
+                       + '<td >'+data[i].name_doctor+'</td>'
+                    +'</tr>'
               tb.innerHTML+=row
         }
       },
@@ -50,7 +48,7 @@ buildTable()
 
 
 $.ajax({
-  url: 'http://127.0.0.1:50005/api/medicalschedule',
+  url: 'http://115.78.230.192:59025/api/medicalschedule',
   type: 'GET',
   dataType: 'json',
   success: function (data, textStatus, xhr) {

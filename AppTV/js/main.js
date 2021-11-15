@@ -51,24 +51,24 @@
 GetListOrderDetailByID()
 function GetListOrderDetailByID(){
   $.ajax({
-    url: 'http://127.0.0.1:50005/api/orderdetail',
+    url: 'http://115.78.230.192:59025/api/orderdetail',
     type: 'GET',
-    dataType: 'json',
+    dataType: 'json', 
     success: function (data, textStatus, xhr) {
       var tb = document.getElementById('myTB')
       var tb3 ="";
       for(var i = 0; i < data.length; i++)
       {
-        var row = '<tr value="${data[i].id_food}>'
+        var row = '<tr value="'+data[i].id_food+'">'
               row+= '    <td >' + i+1 + '</td>'
               row+=      '<td >' + data[i].name_food +'</td>'
               row+= '        <td > '+ data[i].quantity + '</td>'
-                row += '      <td > ' + data[i].price + '</td>'
+                row += '      <td > ' + data[i].p +'</td>'
                row +=  ' </tr>'
-               row += '       <tr class="more-info" value="${data[i].id_food}">'
+               row += '       <tr class="more-info" value="'+data[i].id_food+'">'
                row += '        <td colspan="4" style="background-color: white; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);">'
                row += '         <button class="insertBtn5" onclick="DeleteOrderDetail()">Xóa</button>'
-               row += '          <button class="insertBtn6" id="update${i}">Sửa</button>'
+               row += '          <button class="insertBtn6" id="update'+i+'">Sửa</button>'
                row += '          </td>'
                row += '     </tr>'
                   tb3+=row
@@ -92,7 +92,7 @@ var idord = 0;
 GetValues()
 function GetValues(){
   $.ajax({
-    url: 'http://127.0.0.1:50005/api/orderdetail',
+    url: 'http://115.78.230.192:59025/api/orderdetail',
     type: 'GET',
     dataType: 'json',
     success: function (data, textStatus, xhr) {
@@ -130,7 +130,7 @@ function GetValues(){
             }
 
             $.ajax({
-                url: 'http://127.0.0.1:50005/api/orderdetail',
+                url: 'http://115.78.230.192:59025/api/orderdetail',
                 headers: {
                     'Access-Control-Allow-Origin': '*',
                     'Access-Control-Allow-Credentials': 'true',
@@ -163,7 +163,7 @@ function GetValues(){
                 "id_order": parseInt(idord)
             }
             $.ajax({
-                url: 'http://127.0.0.1:50005/api/orderdetail',
+                url: 'http://115.78.230.192:59025/api/orderdetail',
                 headers: {
                     'Access-Control-Allow-Origin': '*',
                     'Access-Control-Allow-Credentials': 'true',
@@ -191,7 +191,7 @@ function GetValues(){
             }
 
             $.ajax({
-                url: 'http://127.0.0.1:50005/api/orderdetail',
+                url: 'http://115.78.230.192:59025/api/orderdetail',
                 headers: {
                     'Access-Control-Allow-Origin': '*',
                     'Access-Control-Allow-Credentials': 'true',
@@ -217,14 +217,14 @@ function GetValues(){
 
         function getData() {
             $.ajax({
-                url: 'http://127.0.0.1:50005/api/order',
+                url: 'http://115.78.230.192:59025/api/order',
                 type: 'GET',
                 dataType: 'json',
                 success: function (data, textStatus, xhr) {
                     var tb1 = document.getElementById('idd1')
                     for(var i = 0; i < data.length/4; i++)
                     {
-                        var row1 = '<div style="display: flex;" id="id${i}"></div>'
+                        var row1 = '<div style="display: flex;" id="id'+i +'"></div>'
                         tb1.innerHTML+=row1
 
                         var tb2 = document.getElementById('id'+i)
@@ -232,12 +232,18 @@ function GetValues(){
                         {
                             if(j<data.length)
                             {
-                            var row2 = '<div class="wrap" id="updateDetails${j}" onclick="getIDfood(this)">
-                                            <p style="display:none">${data[j].id}</p>
-                                            <img src="assets/${data[j].image}" alt="Snow" style="width:100%;margin-bottom: 5px;"/>
-                                            <label class="lbl">${data[j].price}K</label></label>
-                                            <span style="margin: 15px; font-weight: 600;">${data[j].name}</span>
-                                        </div>'
+                              var row2 =
+                              '<div class="wrap" id="updateDetails' +
+                              j +
+                              '" onclick="getIDfood(this)"><p style="display:none">' +
+                              data[j].id +
+                              '</p><img src="assets/' +
+                              data[j].image +
+                              '" alt="Snow" style="width:100%;margin-bottom: 5px;"/><label class="lbl">' +
+                              data[j].price +
+                              'K</label></label><span style="margin: 15px; font-weight: 600;">' +
+                              data[j].name +
+                              "</span></div>";
                                 tb2.innerHTML+=row2
                             }
                         }
@@ -263,7 +269,7 @@ function GetValues(){
 
   function myFunction1() {
     $.ajax({
-                url: 'http://127.0.0.1:50005/api/order',
+                url: 'http://115.78.230.192:59025/api/order',
                 type: 'GET',
                 dataType: 'json',
                 success: function (data, textStatus, xhr) {
@@ -271,7 +277,7 @@ function GetValues(){
                     var xx='<img src="assets/bvhd.png" style="padding: 5px 0 0 20px; width: 140px;height: 56px;"> ';
                     for(var i = 0; i < data.length/4; i++)
                     {
-                        var row1 = '<div style="display: flex;" id="id${i}"></div>'
+                        var row1 = '<div style="display: flex;" id="id'+i+'"></div>'
                         xx+=row1
                         x.innerHTML=xx;
                     }
@@ -284,12 +290,12 @@ function GetValues(){
                         {
                         if(j<data.length)
                         {
-                            var row2 = '<div class="wrap" id="updateDetails${j}" onclick="getIDfood(this)">
-                                        <p style="display:none">${data[j].id}</p>
-                                        <img src="assets/${data[j].image}" alt="Snow" style="width:100%;margin-bottom: 5px;"/>
-                                        <label class="lbl">${data[j].price}K</label></label>
-                                        <span style="margin: 15px; font-weight: 600;">${data[j].name}</span>
-                                    </div>'
+                            var row2 = '<div class="wrap" id="updateDetails'+j+'" onclick="getIDfood(this)">'
+                                        +'<p style="display:none">'+data[j].id+'</p>'
+                                        +'<img src="assets/'+ data[j].image +'" alt="Snow" style="width:100%;margin-bottom: 5px;"/>'
+                                        +'<label class="lbl">'+data[j].price+'K</label></label>'
+                                        +'<span style="margin: 15px; font-weight: 600;">'+data[j].name+'</span>'
+                                    +'</div>'
                                 tb3+=row2
                                 tb2.innerHTML=tb3
                         }
@@ -314,7 +320,7 @@ function GetValues(){
   var ages2 = [];
 
   $.ajax({
-            url: 'http://127.0.0.1:50005/api/order',
+            url: 'http://115.78.230.192:59025/api/order',
             type: 'GET',
             dataType: 'json',
             success: function (data, textStatus, xhr) {
@@ -339,7 +345,7 @@ function myFunction2() {
     var xx='<img src="assets/bvhd.png" style="padding: 5px 0 0 20px; width: 140px;height: 56px;">';
     for(var i = 0; i < ages2.length/4; i++)
     {
-        var row1 = '<div style="display: flex;" id="id${i}"></div>'
+      var row1 = '<div style="display: flex;" id="id" + i + "></div>';
         xx+=row1
         x.innerHTML=xx;
     }
@@ -352,18 +358,17 @@ function myFunction2() {
         {
           if(j<ages2.length)
           {
-            var row2 = '<div class="wrap" id="updateDetails${j}" onclick="getIDfood(this)">'
-            	row2 += ' <p style="display:none">${ages2[j].ID}</p>'
-            		row2 +=  ' <img src="assets/${ages2[j].IMG}" alt="Snow" style="width:100%;margin-bottom: 5px;"/>'      
+            var row2 = '<div class="wrap" id="updateDetails'+j+'"></div> onclick="getIDfood(this)">'
+            	row2 += ' <p style="display:none">'+ages2[j].ID+'</p>'
+            		row2 +=  ' <img src="assets/'+ages2[j].IMG}+'" alt="Snow" style="width:100%;margin-bottom: 5px;"/>'      
                          
-            			row2 += '      <label class="lbl">${ages2[j].GIA}K</label></label>'
-            				row2 += '    <span style="margin: 15px; font-weight: 600;">${ages2[j].TENMON}</span>'
+            			row2 += '      <label class="lbl">'+ages2[j].GIA+'K</label></label>'
+            				row2 += '    <span style="margin: 15px; font-weight: 600;">'+ages2[j].TENMON+'</span>'
             					row2 +='</div>'
                 tb3+=row2
                 tb2.innerHTML=tb3
           }
         }
-    }
     for(var l = 0; l < ages2.length; l++)
     {
       document.getElementById('updateDetails'+l).addEventListener('click', function onOpen() {
@@ -381,7 +386,7 @@ function myFunction2() {
 var ages3 = [];
 
 $.ajax({
-            url: 'http://127.0.0.1:50005/api/order',
+            url: 'http://115.78.230.192:59025/api/order',
             type: 'GET',
             dataType: 'json',
             success: function (data, textStatus, xhr) {
@@ -405,7 +410,7 @@ function myFunction3() {
   var xx='<img src="assets/bvhd.png" style="padding: 5px 0 0 20px; width: 140px;height: 56px;"> ';
   for(var i = 0; i < ages3.length/4; i++)
   {
-      var row1 = '<div style="display: flex;" id="id${i}"></div>'
+      var row1 = '<div style="display: flex;" id="id'+i+'"></div>'
       xx+=row1
       x.innerHTML=xx;
   }
@@ -418,12 +423,12 @@ function myFunction3() {
       {
         if(j<ages3.length)
         {
-          var row2 = '<div class="wrap" id="updateDetails${j}" onclick="getIDfood(this)">
-                        <p style="display:none">${ages3[j].ID}</p>
-                        <img src="assets/${ages3[j].IMG}" alt="Snow" style="width:100%;margin-bottom: 5px;"/>
-                        <label class="lbl">${ages3[j].GIA}K</label></label>
-                        <span style="margin: 15px; font-weight: 600;">${ages3[j].TENMON}</span>
-                    </div>'
+          var row2 = '<div class="wrap" id="updateDetails'+j+'" onclick="getIDfood(this)">'
+                        +'<p style="display:none">'+ages3[j].ID+'</p>'
+                        +'<img src="assets/'+ages3[j].IMG+'" alt="Snow" style="width:100%;margin-bottom: 5px;"/>'
+                        +'<label class="lbl">'+ages3[j].GIA+'K</label></label>'
+                        +'<span style="margin: 15px; font-weight: 600;">'+ages3[j].TENMON+'</span>'
+                    +'</div>'
               tb3+=row2
               tb2.innerHTML=tb3
         }
@@ -446,7 +451,7 @@ function myFunction3() {
 var ages4 = [];
 
 $.ajax({
-            url: 'http://127.0.0.1:50005/api/order',
+            url: 'http://115.78.230.192:59025/api/order',
             type: 'GET',
             dataType: 'json',
             success: function (data, textStatus, xhr) {
@@ -470,7 +475,7 @@ function myFunction4() {
   var xx='<img src="assets/bvhd.png" style="padding: 5px 0 0 20px; width: 140px;height: 56px;"> ';
   for(var i = 0; i < ages4.length/4; i++)
   {
-      var row1 = '<div style="display: flex;" id="id${i}"></div>'
+      var row1 = '<div style="display: flex;" id="id'+i+'"></div>'
       xx+=row1
       x.innerHTML=xx;
   }
@@ -484,11 +489,11 @@ function myFunction4() {
         if(j<ages4.length)
         {
           var row2 = '<div class="wrap" id="updateDetails${j}" onclick="getIDfood(this)">'
-        	  row2 +=        '<p style="display:none">${ages4[j].ID}</p>'
-        		  row2 +=         '<img src="assets/${ages4[j].IMG}" alt="Snow" style="width:100%;margin-bottom: 5px;"/>'
-        			  row2 +=        '<label class="lbl">${ages4[j].GIA}K</label></label>
-        			  row2 +=         '<span style="margin: 15px; font-weight: 600;">${ages4[j].TENMON}</span>'
-                    </div>'
+        	  +        '<p style="display:none">'+ages4[j].ID+'</p>'
+        		  +         '<img src="assets/'+ages4[j].IMG+'" alt="Snow" style="width:100%;margin-bottom: 5px;"/>'
+        			  +        '<label class="lbl">'+ages4[j].GIA+'K</label></label>'
+        			  +         '<span style="margin: 15px; font-weight: 600;">'+ages4[j].TENMON+'</span>'
+                    +'</div>'
               tb3+=row2
               tb2.innerHTML=tb3
         }

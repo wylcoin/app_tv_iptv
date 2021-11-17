@@ -59,18 +59,18 @@ function GetListOrderDetailByID(){
       var tb3 ="";
       for(var i = 0; i < data.length; i++)
       {
-        var row = '<tr value="'+data[i].id_food+'">'
-              row+= '    <td >' + i+1 + '</td>'
-              row+=      '<td >' + data[i].name_food +'</td>'
-              row+= '        <td > '+ data[i].quantity + '</td>'
-                row += '      <td > ' + data[i].p +'</td>'
-               row +=  ' </tr>'
-               row += '       <tr class="more-info" value="'+data[i].id_food+'">'
-               row += '        <td colspan="4" style="background-color: white; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);">'
-               row += '         <button class="insertBtn5" onclick="DeleteOrderDetail()">Xóa</button>'
-               row += '          <button class="insertBtn6" id="update'+i+'">Sửa</button>'
-               row += '          </td>'
-               row += '     </tr>'
+        var row = '<tr value="'+data[i].id_food+'" class="order-item">'
+                + '    <td >' + i+1 + '</td>'
+                + '    <td >' + data[i].name_food +'</td>'
+                + '    <td > '+ data[i].quantity + '</td>'
+                + '    <td > ' + data[i].price +'</td>'
+                + '</tr>'
+                + '<tr class="more-info" value="'+data[i].id_food+'">'
+                + '     <td colspan="4" style="background-color: white; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);">'
+                + '         <button class="insertBtn5" onclick="DeleteOrderDetail()">Xóa</button>'
+                + '         <button class="insertBtn6" id="update'+i+'">Sửa</button>'
+                + '     </td>'
+                + '</tr>'
                   tb3+=row
                   tb.innerHTML=tb3                
       }
@@ -101,7 +101,7 @@ function GetValues(){
           $(this).next('.more-info').slideToggle('fast');
         });
       });
-
+      DeleteOrderDetail()
       var tosubTotal = 0;
       var subTotal2 = 0;
 
@@ -128,7 +128,7 @@ function GetValues(){
                 "id_order": parseInt(idord),
                 "quantity": parseInt($('#sl').val())
             }
-
+            console.log(data);
             $.ajax({
                 url: 'http://115.78.230.192:59025/api/orderdetail',
                 headers: {
@@ -142,7 +142,6 @@ function GetValues(){
                 data: JSON.stringify(data),
                 success: function (result) {
                     //  console.log('success' + result);
-                    console.log(text)
                      GetListOrderDetailByID();
                      GetValues();
                 },
@@ -154,7 +153,7 @@ function GetValues(){
         $(".table").on('click','tr',function(e){
             e.preventDefault();
             idfood_d = $(this).attr('value');
-            alert(idfood_d);
+            // console.log('id food: ',idfood_d);
         });
 
         function DeleteOrderDetail() {
@@ -162,6 +161,7 @@ function GetValues(){
                 "id_food": parseInt(idfood_d),
                 "id_order": parseInt(idord)
             }
+            console.log(data1);
             $.ajax({
                 url: 'http://115.78.230.192:59025/api/orderdetail',
                 headers: {
@@ -177,7 +177,7 @@ function GetValues(){
                      console.log('success' + result);
                      GetListOrderDetailByID();
                      GetValues();
-                },
+                }
             })
         }
 
@@ -224,7 +224,7 @@ function GetValues(){
                     var tb1 = document.getElementById('idd1')
                     for(var i = 0; i < data.length/4; i++)
                     {
-                        var row1 = '<div style="display: flex;" id="id'+i +'"></div>'
+                        var row1 = '<div style="display: flex;" id="id'+ i +'"></div>'
                         tb1.innerHTML+=row1
 
                         var tb2 = document.getElementById('id'+i)
@@ -233,18 +233,18 @@ function GetValues(){
                             if(j<data.length)
                             {
                               var row2 =
-                              '<div class="wrap" id="updateDetails' +
-                              j +
-                              '" onclick="getIDfood(this)"><p style="display:none">' +
-                              data[j].id +
-                              '</p><img src="assets/' +
-                              data[j].image +
-                              '" alt="Snow" style="width:100%;margin-bottom: 5px;"/><label class="lbl">' +
-                              data[j].price +
-                              'K</label></label><span style="margin: 15px; font-weight: 600;">' +
-                              data[j].name +
-                              "</span></div>";
-                                tb2.innerHTML+=row2
+                                  '<div class="wrap" id="updateDetails' + j +'" onclick="getIDfood(this)">'
+                                    +'<p style="display:none">' 
+                                    + data[j].id 
+                                    +'</p>'
+                                    +'<img src="assets/' 
+                                    +data[j].image 
+                                    +'" alt="Snow" style="width:100%;margin-bottom: 5px;"/>'
+                                    +'<label class="lbl">' + data[j].price + 'K</label>'
+                                    +'<span style="margin: 15px; font-weight: 600;">' +
+                                    data[j].name +"</span>"
+                                  +"</div>";
+                              tb2.innerHTML+=row2
                             }
                         }
                     }
@@ -281,7 +281,7 @@ function GetValues(){
                         xx+=row1
                         x.innerHTML=xx;
                     }
-
+                    
                     for(var k = 0; k < data.length/4; k++)
                     {
                         var tb2 = document.getElementById('id'+k)
@@ -293,7 +293,7 @@ function GetValues(){
                             var row2 = '<div class="wrap" id="updateDetails'+j+'" onclick="getIDfood(this)">'
                                         +'<p style="display:none">'+data[j].id+'</p>'
                                         +'<img src="assets/'+ data[j].image +'" alt="Snow" style="width:100%;margin-bottom: 5px;"/>'
-                                        +'<label class="lbl">'+data[j].price+'K</label></label>'
+                                        +'<label class="lbl">'+data[j].price+'K</label>'
                                         +'<span style="margin: 15px; font-weight: 600;">'+data[j].name+'</span>'
                                     +'</div>'
                                 tb3+=row2
@@ -353,20 +353,17 @@ function myFunction2() {
     for(var k = 0; k < ages2.length/4; k++)
     {
         var tb2 = document.getElementById('id'+k)
-        var tb3 ="";
         for(var j =k*4; j < 4*k+4; j++)
         {
           if(j<ages2.length)
           {
-            var row2 = '<div class="wrap" id="updateDetails'+j+'"></div> onclick="getIDfood(this)">'
-            	row2 += ' <p style="display:none">'+ages2[j].ID+'</p>'
-            		row2 +=  ' <img src="assets/'+ages2[j].IMG}+'" alt="Snow" style="width:100%;margin-bottom: 5px;"/>'      
-                         
-            			row2 += '      <label class="lbl">'+ages2[j].GIA+'K</label></label>'
-            				row2 += '    <span style="margin: 15px; font-weight: 600;">'+ages2[j].TENMON+'</span>'
-            					row2 +='</div>'
-                tb3+=row2
-                tb2.innerHTML=tb3
+            var row2 = '<div class="wrap" id="updateDetails'+j+'" onclick="getIDfood(this)">'
+                      + ' <p style="display:none">'+ages2[j].ID+'</p>'
+                      + ' <img src="assets/'+ages2[j].IMG}+'" alt="Snow" style="width:100%;margin-bottom: 5px;"/>'    
+                      + ' <label class="lbl">'+ages2[j].GIA+'K</label></label>'
+                      + ' <span style="margin: 15px; font-weight: 600;">'+ages2[j].TENMON+'</span>'
+                      +'</div>'
+            tb2.innerHTML=row2
           }
         }
     for(var l = 0; l < ages2.length; l++)
@@ -488,12 +485,12 @@ function myFunction4() {
       {
         if(j<ages4.length)
         {
-          var row2 = '<div class="wrap" id="updateDetails${j}" onclick="getIDfood(this)">'
-        	  +        '<p style="display:none">'+ages4[j].ID+'</p>'
-        		  +         '<img src="assets/'+ages4[j].IMG+'" alt="Snow" style="width:100%;margin-bottom: 5px;"/>'
-        			  +        '<label class="lbl">'+ages4[j].GIA+'K</label></label>'
-        			  +         '<span style="margin: 15px; font-weight: 600;">'+ages4[j].TENMON+'</span>'
-                    +'</div>'
+          var row2 = '<div class="wrap" id="updateDetails'+j+'" onclick="getIDfood(this)">'
+        	      +        '<p style="display:none">'+ages4[j].ID+'</p>'
+        		    +        '<img src="assets/'+ages4[j].IMG+'" alt="Snow" style="width:100%;margin-bottom: 5px;"/>'
+        			  +        '<label class="lbl">'+ages4[j].GIA+'K</label>'
+        			  +        '<span style="margin: 15px; font-weight: 600;">'+ages4[j].TENMON+'</span>'
+                +    '</div>'
               tb3+=row2
               tb2.innerHTML=tb3
         }
@@ -518,5 +515,11 @@ document.getElementById('btnXN').addEventListener('click', function onOpen() {
     alert("The <dialog> API is not supported by this browser");
   }
 });
+var imgWrapBtn = document.querySelector('.img-wrap')
+
+imgWrapBtn.addEventListener("click", goBack)
+function goBack() {
+  window.history.back();
+}
 
 

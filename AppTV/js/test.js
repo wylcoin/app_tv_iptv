@@ -6,22 +6,18 @@ function getData() {
     success: function (data, textStatus, xhr) {
       var tb1 = document.getElementById("idd1");
       for (var i = 0; i < data.length / 4; i++) {
-        var row1 = '<div style="display: flex;" id="id${i}"></div>';
+        var row1 = '<div style="display: flex;" id="id'+i+'"></div>';
         tb1.innerHTML += row1;
 
         var tb2 = document.getElementById("id" + i);
         for (var j = i * 4; j < 4 * i + 4; j++) {
           if (j < data.length) {
-            var row2 =
-              '<div class="wrap" id="updateDetails' +
-              j +
-              '" " onclick="getIDfood(this)">';
-            row2 += '<p style="display:none">${data[j].id}</p>';
-            row2 +=
-              ' <img src="assets/${data[j].image}" alt="Snow" style="width:100%;margin-bottom: 5px;"/>';
-            row2 += ' <label class="lbl">${data[j].price}K</label></label>';
-            row2 +=
-              '<span style="margin: 15px; font-weight: 600;">${data[j].name}</span>';
+            var row2 ='<div class="wrap" id="updateDetails' +
+              j +'" onclick="getIDfood(this)">';
+            row2 += '<p style="display:none">'+data[j].id+'</p>';
+            row2 +=' <img src="assets/'+data[j].image+'" alt="Snow" style="width:100%;margin-bottom: 5px;"/>';
+            row2 += ' <label class="lbl">'+data[j].price+'K</label></label>';
+            row2 +='<span style="margin: 15px; font-weight: 600;">'+data[j].name+'</span>';
             row2 += "</div>";
             tb2.innerHTML += row2;
           }
@@ -59,8 +55,7 @@ function GetListOrderDetailByID() {
         row += "      <td > " + data[i].price + "</td>";
         row += " </tr>";
         row += '       <tr class="more-info" value="'+data[i].id_food+'">';
-        row +=
-          '        <td colspan="4" style="background-color: white; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);">';
+        row += '   <td colspan="4" style="background-color: white; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);">';
         row +=
           '         <button class="insertBtn5" onclick="DeleteOrderDetail()">Xóa</button>';
         row +='<button class="insertBtn6" id="update'+i+'">Sửa</button>';

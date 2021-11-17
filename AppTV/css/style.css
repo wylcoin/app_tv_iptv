@@ -1,27 +1,42 @@
-.insertBtn {   
+body {
+  margin: 0;
+}
+.img-wrap{
+  cursor: pointer;
+}
+.img-wrap .img-arrow {
+  width: 28px;
+  height: 28px;
+  position: absolute;
+  top: 24px;
+  left: 30px;
+}
+.insertBtn {
   border: none;
   color: rgba(0, 0, 0, 0.5);
   font-size: 14px;
   width: 100%;
   height: 70px;
-  background-color: #FFF;
+  background-color: #fff;
 }
 .insertBtn:hover {
   background-color: red;
   color: white;
 }
-.wrap
-{
-  background: #FFFFFF;
+.insertBtn.active {
+  background-color: red;
+  color: white;
+}
+.wrap {
+  background: #ffffff;
   border-radius: 5px;
-  height: 220px ;
+  height: 220px;
   width: 220px;
   margin: 20px 0 0 20px;
   border: 1px solid rgba(0, 0, 0, 0.15);
   position: relative;
 }
-.wrap:hover
-{
+.wrap:hover {
   border: 1px solid red;
 }
 .wrap .lbl {
@@ -48,7 +63,9 @@
   text-align: center;
 }
 
-.insertBtn2 {   
+.insertBtn2 {
+  position: absolute;
+  bottom: 0;
   border: none;
   color: white;
   background-color: red;
@@ -63,12 +80,10 @@
   border: 1px solid red;
 }
 
-
-
 .table {
   width: 100%;
   margin-bottom: 1rem;
-  background-color: #FFF;
+  background-color: #fff;
   border: none;
   border-collapse: collapse;
 }
@@ -86,16 +101,16 @@
   text-align: left;
 }
 
-.text1{
+.text1 {
   width: 45px;
-  height: 45px; 
+  height: 45px;
   margin-left: 83px;
   font-size: 20px;
   font-weight: bold;
   border: 1px solid rgba(0, 0, 0, 0.15);
 }
 
-.insertBtn3 {   
+.insertBtn3 {
   border: none;
   color: white;
   background-color: red;
@@ -111,7 +126,7 @@
   border: 1px solid red;
 }
 
-.insertBtn4 {   
+.insertBtn4 {
   border: 1px solid rgba(0, 0, 0, 0.5);
   color: rgba(0, 0, 0, 0.5);
   background-color: white;
@@ -129,8 +144,15 @@
 .more-info {
   display: none;
 }
+.order-item {
+  cursor: pointer;
+  opacity: 0.9;
+}
+.order-item:hover {
+  opacity: 1;
+}
 
-.insertBtn6 {   
+.insertBtn6 {
   border: none;
   color: white;
   background-color: red;
@@ -146,7 +168,7 @@
   border: 1px solid red;
 }
 
-.insertBtn5 {   
+.insertBtn5 {
   border: 1px solid rgba(0, 0, 0, 0.5);
   color: rgba(0, 0, 0, 0.5);
   background-color: white;

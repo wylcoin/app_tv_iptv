@@ -75,9 +75,13 @@
 }
 #chanel-list-slider .img-wrap {
   width: 100%;
+  min-width: 312px;
   border: 2px solid rgba(0, 0, 0, 0.15);
 }
 #chanel-list-slider .img-wrap:hover {
+  border-color: red;
+}
+#chanel-list-slider .chanel-item.active .img-wrap {
   border-color: red;
 }
 
@@ -85,7 +89,9 @@
   padding: 12px;
 }
 #chanel-list-slider .chanel-item {
+  display: block;
   margin: 50px 10px 0 10px;
+  text-decoration: none;
 }
 #carousel-chanel-container .chanel-name {
   font-size: 32px;

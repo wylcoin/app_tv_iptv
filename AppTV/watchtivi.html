@@ -17,6 +17,7 @@
   <body>
     <script src="./js/jquery-1.9.1.js"></script>
     <div class="content">
+
       <div class="div2">
         <svg
           onclick="goBack()"
@@ -40,7 +41,7 @@
       L5,232.9z"
           />
         </svg>
-        <p class="title-page">Xem Tivi</p>
+        <p onclick="isVisiable = !isVisiable" class="title-page">Xem Tivi</p>
         <input
           class="search-control"
           type="text"
@@ -49,7 +50,6 @@
           placeholder="Tìm kiếm"
         />
       </div>
-
       <!-- <div class="chanel-list" id="idd1"></div> -->
       <div class="carousel-tv" id="carousel-chanel-container">
         <div class="carousel-inner">
@@ -73,6 +73,7 @@
        
       </div>
     </div>
+
 
     <script type="text/javascript" src="./js/watchtivi.js"></script>
     <script type="text/javascript" src="./main.js"></script>

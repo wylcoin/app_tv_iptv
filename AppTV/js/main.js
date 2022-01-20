@@ -48,10 +48,12 @@
 // document.getElementById("val2").innerHTML = String(subTotal2)+"K";
 
 /// Lấy dữ liệu lên table detail
+
+
 GetListOrderDetailByID()
 function GetListOrderDetailByID(){
   $.ajax({
-    url: 'http://115.78.230.192:59025/api/orderdetail',
+    url: 'http://115.78.230.192:59064/api/orderdetail',
     type: 'GET',
     dataType: 'json', 
     success: function (data, textStatus, xhr) {
@@ -92,7 +94,7 @@ var idord = 0;
 GetValues()
 function GetValues(){
   $.ajax({
-    url: 'http://115.78.230.192:59025/api/orderdetail',
+    url: 'http://115.78.230.192:59064/api/orderdetail',
     type: 'GET',
     dataType: 'json',
     success: function (data, textStatus, xhr) {
@@ -130,7 +132,7 @@ function GetValues(){
             }
             console.log(data);
             $.ajax({
-                url: 'http://115.78.230.192:59025/api/orderdetail',
+                url: 'http://115.78.230.192:59064/api/orderdetail',
                 headers: {
                     'Access-Control-Allow-Origin': '*',
                     'Access-Control-Allow-Credentials': 'true',
@@ -163,7 +165,7 @@ function GetValues(){
             }
             console.log(data1);
             $.ajax({
-                url: 'http://115.78.230.192:59025/api/orderdetail',
+                url: 'http://115.78.230.192:59064/api/orderdetail',
                 headers: {
                     'Access-Control-Allow-Origin': '*',
                     'Access-Control-Allow-Credentials': 'true',
@@ -191,7 +193,7 @@ function GetValues(){
             }
 
             $.ajax({
-                url: 'http://115.78.230.192:59025/api/orderdetail',
+                url: 'http://115.78.230.192:59064/api/orderdetail',
                 headers: {
                     'Access-Control-Allow-Origin': '*',
                     'Access-Control-Allow-Credentials': 'true',
@@ -217,7 +219,7 @@ function GetValues(){
 
         function getData() {
             $.ajax({
-                url: 'http://115.78.230.192:59025/api/order',
+                url: 'http://115.78.230.192:59064/api/order',
                 type: 'GET',
                 dataType: 'json',
                 success: function (data, textStatus, xhr) {
@@ -269,7 +271,7 @@ function GetValues(){
 
   function myFunction1() {
     $.ajax({
-                url: 'http://115.78.230.192:59025/api/order',
+                url: 'http://115.78.230.192:59064/api/order',
                 type: 'GET',
                 dataType: 'json',
                 success: function (data, textStatus, xhr) {
@@ -320,7 +322,7 @@ function GetValues(){
   var ages2 = [];
 
   $.ajax({
-            url: 'http://115.78.230.192:59025/api/order',
+            url: 'http://115.78.230.192:59064/api/order',
             type: 'GET',
             dataType: 'json',
             success: function (data, textStatus, xhr) {
@@ -383,7 +385,7 @@ function myFunction2() {
 var ages3 = [];
 
 $.ajax({
-            url: 'http://115.78.230.192:59025/api/order',
+            url: 'http://115.78.230.192:59064/api/order',
             type: 'GET',
             dataType: 'json',
             success: function (data, textStatus, xhr) {
@@ -448,7 +450,7 @@ function myFunction3() {
 var ages4 = [];
 
 $.ajax({
-            url: 'http://115.78.230.192:59025/api/order',
+            url: 'http://115.78.230.192:59064/api/order',
             type: 'GET',
             dataType: 'json',
             success: function (data, textStatus, xhr) {

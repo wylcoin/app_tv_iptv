@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_JhB0wEOaEeyhjNP-6OXdIA" elementId="org.eclipse.e4.legacy.ide.application" contributorURI="platform:/plugin/org.eclipse.ui.workbench" selectedElement="_JhB0wUOaEeyhjNP-6OXdIA" bindingContexts="_JhB5hEOaEeyhjNP-6OXdIA">
-  <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;workbench>&#xD;&#xA;&lt;mruList>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.tizen.web.editor.configuration.ConfigurationEditor&quot; name=&quot;config.xml&quot; tooltip=&quot;AppTV/config.xml&quot;>&#xD;&#xA;&lt;persistable path=&quot;/AppTV/config.xml&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.tizen.web.editor.javascript.JavascriptEditor&quot; name=&quot;menu.js&quot; tooltip=&quot;AppTV/js/menu.js&quot;>&#xD;&#xA;&lt;persistable path=&quot;/AppTV/js/menu.js&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.tizen.web.editor.javascript.JavascriptEditor&quot; name=&quot;main.js&quot; tooltip=&quot;AppTV/js/main.js&quot;>&#xD;&#xA;&lt;persistable path=&quot;/AppTV/js/main.js&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.tizen.web.editor.javascript.JavascriptEditor&quot; name=&quot;test.js&quot; tooltip=&quot;AppTV/js/test.js&quot;>&#xD;&#xA;&lt;persistable path=&quot;/AppTV/js/test.js&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.tizen.web.editor.html.HTMLEditor&quot; name=&quot;index.html&quot; tooltip=&quot;AppTV/index.html&quot;>&#xD;&#xA;&lt;persistable path=&quot;/AppTV/index.html&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.tizen.web.editor.css.CSSEditor&quot; name=&quot;style.css&quot; tooltip=&quot;AppTV/css/style.css&quot;>&#xD;&#xA;&lt;persistable path=&quot;/AppTV/css/style.css&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.ide.FileStoreEditorInputFactory&quot; id=&quot;org.tizen.web.editor.html.HTMLEditor&quot; name=&quot;introduce.html&quot; tooltip=&quot;C:\Users\STVG-D~1\AppData\Local\Temp\zip325780309\introduce.html&quot;>&#xD;&#xA;&lt;persistable uri=&quot;file:/C:/Users/STVG-D~1/AppData/Local/Temp/zip325780309/introduce.html&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.ide.FileStoreEditorInputFactory&quot; id=&quot;org.tizen.web.editor.html.HTMLEditor&quot; name=&quot;watchtivi.html&quot; tooltip=&quot;C:\Users\STVG-D~1\AppData\Local\Temp\zip325780309\watchtivi.html&quot;>&#xD;&#xA;&lt;persistable uri=&quot;file:/C:/Users/STVG-D~1/AppData/Local/Temp/zip325780309/watchtivi.html&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.ide.FileStoreEditorInputFactory&quot; id=&quot;org.tizen.web.editor.html.HTMLEditor&quot; name=&quot;watchfilm.html&quot; tooltip=&quot;C:\Users\STVG-D~1\AppData\Local\Temp\zip325780309\watchfilm.html&quot;>&#xD;&#xA;&lt;persistable uri=&quot;file:/C:/Users/STVG-D~1/AppData/Local/Temp/zip325780309/watchfilm.html&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.ide.FileStoreEditorInputFactory&quot; id=&quot;org.tizen.web.editor.configuration.serviceprofile.editor.xmleditor&quot; name=&quot;signature1.xml&quot; tooltip=&quot;C:\Users\STVG-D~1\AppData\Local\Temp\zip325780309\signature1.xml&quot;>&#xD;&#xA;&lt;persistable uri=&quot;file:/C:/Users/STVG-D~1/AppData/Local/Temp/zip325780309/signature1.xml&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.ide.FileStoreEditorInputFactory&quot; id=&quot;org.tizen.web.editor.javascript.JavascriptEditor&quot; name=&quot;restaurant.js&quot; tooltip=&quot;C:\Users\STVG-D~1\AppData\Local\Temp\zip325780309\js\restaurant.js&quot;>&#xD;&#xA;&lt;persistable uri=&quot;file:/C:/Users/STVG-D~1/AppData/Local/Temp/zip325780309/js/restaurant.js&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.ide.FileStoreEditorInputFactory&quot; id=&quot;org.tizen.web.editor.html.HTMLEditor&quot; name=&quot;handbook.html&quot; tooltip=&quot;C:\Users\STVG-D~1\AppData\Local\Temp\zip325780309\handbook.html&quot;>&#xD;&#xA;&lt;persistable uri=&quot;file:/C:/Users/STVG-D~1/AppData/Local/Temp/zip325780309/handbook.html&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.ide.FileStoreEditorInputFactory&quot; id=&quot;org.tizen.web.editor.javascript.JavascriptEditor&quot; name=&quot;main.js&quot; tooltip=&quot;C:\Users\STVG-D~1\AppData\Local\Temp\zip325780309\main.js&quot;>&#xD;&#xA;&lt;persistable uri=&quot;file:/C:/Users/STVG-D~1/AppData/Local/Temp/zip325780309/main.js&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.tizen.web.editor.css.CSSEditor&quot; name=&quot;jquery.mobile-1.3.2.css&quot; tooltip=&quot;AppTV/css/jquery.mobile-1.3.2.css&quot;>&#xD;&#xA;&lt;persistable path=&quot;/AppTV/css/jquery.mobile-1.3.2.css&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.tizen.web.editor.css.CSSEditor&quot; name=&quot;listdoctor.css&quot; tooltip=&quot;AppTV/css/listdoctor.css&quot;>&#xD;&#xA;&lt;persistable path=&quot;/AppTV/css/listdoctor.css&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;/mruList>&#xD;&#xA;&lt;/workbench>"/>
+  <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;workbench>&#xD;&#xA;&lt;mruList>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.tizen.web.editor.html.HTMLEditor&quot; name=&quot;index.html&quot; tooltip=&quot;AppTV/index.html&quot;>&#xD;&#xA;&lt;persistable path=&quot;/AppTV/index.html&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.tizen.web.editor.configuration.ConfigurationEditor&quot; name=&quot;config.xml&quot; tooltip=&quot;AppTV/config.xml&quot;>&#xD;&#xA;&lt;persistable path=&quot;/AppTV/config.xml&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.tizen.web.editor.javascript.JavascriptEditor&quot; name=&quot;menu.js&quot; tooltip=&quot;AppTV/js/menu.js&quot;>&#xD;&#xA;&lt;persistable path=&quot;/AppTV/js/menu.js&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.tizen.web.editor.javascript.JavascriptEditor&quot; name=&quot;main.js&quot; tooltip=&quot;AppTV/js/main.js&quot;>&#xD;&#xA;&lt;persistable path=&quot;/AppTV/js/main.js&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.tizen.web.editor.javascript.JavascriptEditor&quot; name=&quot;test.js&quot; tooltip=&quot;AppTV/js/test.js&quot;>&#xD;&#xA;&lt;persistable path=&quot;/AppTV/js/test.js&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.tizen.web.editor.css.CSSEditor&quot; name=&quot;style.css&quot; tooltip=&quot;AppTV/css/style.css&quot;>&#xD;&#xA;&lt;persistable path=&quot;/AppTV/css/style.css&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.ide.FileStoreEditorInputFactory&quot; id=&quot;org.tizen.web.editor.html.HTMLEditor&quot; name=&quot;introduce.html&quot; tooltip=&quot;C:\Users\STVG-D~1\AppData\Local\Temp\zip325780309\introduce.html&quot;>&#xD;&#xA;&lt;persistable uri=&quot;file:/C:/Users/STVG-D~1/AppData/Local/Temp/zip325780309/introduce.html&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.ide.FileStoreEditorInputFactory&quot; id=&quot;org.tizen.web.editor.html.HTMLEditor&quot; name=&quot;watchtivi.html&quot; tooltip=&quot;C:\Users\STVG-D~1\AppData\Local\Temp\zip325780309\watchtivi.html&quot;>&#xD;&#xA;&lt;persistable uri=&quot;file:/C:/Users/STVG-D~1/AppData/Local/Temp/zip325780309/watchtivi.html&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.ide.FileStoreEditorInputFactory&quot; id=&quot;org.tizen.web.editor.html.HTMLEditor&quot; name=&quot;watchfilm.html&quot; tooltip=&quot;C:\Users\STVG-D~1\AppData\Local\Temp\zip325780309\watchfilm.html&quot;>&#xD;&#xA;&lt;persistable uri=&quot;file:/C:/Users/STVG-D~1/AppData/Local/Temp/zip325780309/watchfilm.html&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.ide.FileStoreEditorInputFactory&quot; id=&quot;org.tizen.web.editor.configuration.serviceprofile.editor.xmleditor&quot; name=&quot;signature1.xml&quot; tooltip=&quot;C:\Users\STVG-D~1\AppData\Local\Temp\zip325780309\signature1.xml&quot;>&#xD;&#xA;&lt;persistable uri=&quot;file:/C:/Users/STVG-D~1/AppData/Local/Temp/zip325780309/signature1.xml&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.ide.FileStoreEditorInputFactory&quot; id=&quot;org.tizen.web.editor.javascript.JavascriptEditor&quot; name=&quot;restaurant.js&quot; tooltip=&quot;C:\Users\STVG-D~1\AppData\Local\Temp\zip325780309\js\restaurant.js&quot;>&#xD;&#xA;&lt;persistable uri=&quot;file:/C:/Users/STVG-D~1/AppData/Local/Temp/zip325780309/js/restaurant.js&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.ide.FileStoreEditorInputFactory&quot; id=&quot;org.tizen.web.editor.html.HTMLEditor&quot; name=&quot;handbook.html&quot; tooltip=&quot;C:\Users\STVG-D~1\AppData\Local\Temp\zip325780309\handbook.html&quot;>&#xD;&#xA;&lt;persistable uri=&quot;file:/C:/Users/STVG-D~1/AppData/Local/Temp/zip325780309/handbook.html&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.ide.FileStoreEditorInputFactory&quot; id=&quot;org.tizen.web.editor.javascript.JavascriptEditor&quot; name=&quot;main.js&quot; tooltip=&quot;C:\Users\STVG-D~1\AppData\Local\Temp\zip325780309\main.js&quot;>&#xD;&#xA;&lt;persistable uri=&quot;file:/C:/Users/STVG-D~1/AppData/Local/Temp/zip325780309/main.js&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.tizen.web.editor.css.CSSEditor&quot; name=&quot;jquery.mobile-1.3.2.css&quot; tooltip=&quot;AppTV/css/jquery.mobile-1.3.2.css&quot;>&#xD;&#xA;&lt;persistable path=&quot;/AppTV/css/jquery.mobile-1.3.2.css&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.tizen.web.editor.css.CSSEditor&quot; name=&quot;listdoctor.css&quot; tooltip=&quot;AppTV/css/listdoctor.css&quot;>&#xD;&#xA;&lt;persistable path=&quot;/AppTV/css/listdoctor.css&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;/mruList>&#xD;&#xA;&lt;/workbench>"/>
   <tags>activeSchemeId:org.eclipse.ui.defaultAcceleratorConfiguration</tags>
   <tags>ModelMigrationProcessor.001</tags>
   <children xsi:type="basic:TrimmedWindow" xmi:id="_JhB0wUOaEeyhjNP-6OXdIA" elementId="IDEWindow" contributorURI="platform:/plugin/org.eclipse.ui.workbench" selectedElement="_JhB0wkOaEeyhjNP-6OXdIA" x="0" y="0" width="1386" height="788">
@@ -34,11 +34,12 @@
           <tags>persp.newWizSC:org.tizen.common.ui.tizenprojectwizard</tags>
           <tags>persp.actionSet:org.eclipse.debug.ui.launchActionSet</tags>
           <tags>persp.actionSet:org.eclipse.debug.ui.profileActionSet</tags>
-          <children xsi:type="basic:PartSashContainer" xmi:id="_JhB0xUOaEeyhjNP-6OXdIA" selectedElement="_JhB0yEOaEeyhjNP-6OXdIA" horizontal="true">
+          <children xsi:type="basic:PartSashContainer" xmi:id="_JhB0xUOaEeyhjNP-6OXdIA" selectedElement="_JhB0xkOaEeyhjNP-6OXdIA" horizontal="true">
             <children xsi:type="basic:PartStack" xmi:id="_JhB0xkOaEeyhjNP-6OXdIA" elementId="org.eclipse.ui.navigator.ProjectExplorerMStack" containerData="1650" selectedElement="_JhB0x0OaEeyhjNP-6OXdIA">
+              <tags>active</tags>
               <children xsi:type="advanced:Placeholder" xmi:id="_JhB0x0OaEeyhjNP-6OXdIA" elementId="org.eclipse.ui.navigator.ProjectExplorer" ref="_JhB2tkOaEeyhjNP-6OXdIA"/>
             </children>
-            <children xsi:type="basic:PartSashContainer" xmi:id="_JhB0yEOaEeyhjNP-6OXdIA" containerData="8350" selectedElement="_JhB0z0OaEeyhjNP-6OXdIA" horizontal="true">
+            <children xsi:type="basic:PartSashContainer" xmi:id="_JhB0yEOaEeyhjNP-6OXdIA" containerData="8350" selectedElement="_JhB0yUOaEeyhjNP-6OXdIA" horizontal="true">
               <children xsi:type="basic:PartSashContainer" xmi:id="_JhB0yUOaEeyhjNP-6OXdIA" containerData="7552" selectedElement="_JhB0ykOaEeyhjNP-6OXdIA">
                 <children xsi:type="advanced:Placeholder" xmi:id="_JhB0ykOaEeyhjNP-6OXdIA" elementId="org.eclipse.ui.editorss" containerData="7500" ref="_JhB2M0OaEeyhjNP-6OXdIA"/>
                 <children xsi:type="basic:PartStack" xmi:id="_JhB0y0OaEeyhjNP-6OXdIA" elementId="org.eclipse.ui.views.ProblemViewMStack" visible="false" containerData="2500" selectedElement="_JhB0zUOaEeyhjNP-6OXdIA">
@@ -48,13 +49,13 @@
                   <children xsi:type="advanced:Placeholder" xmi:id="_JhB0zkOaEeyhjNP-6OXdIA" elementId="org.tizen.common.connection.log.LogView" ref="_JhB3K0OaEeyhjNP-6OXdIA"/>
                 </children>
               </children>
-              <children xsi:type="basic:PartStack" xmi:id="_JhB0z0OaEeyhjNP-6OXdIA" elementId="org.eclipse.ui.views.ContentOutlineMStack" containerData="2448" selectedElement="_JhB000OaEeyhjNP-6OXdIA">
+              <children xsi:type="basic:PartStack" xmi:id="_JhB0z0OaEeyhjNP-6OXdIA" elementId="org.eclipse.ui.views.ContentOutlineMStack" visible="false" containerData="2448" selectedElement="_JhB01EOaEeyhjNP-6OXdIA">
                 <tags>General</tags>
-                <tags>active</tags>
+                <tags>Minimized</tags>
                 <children xsi:type="advanced:Placeholder" xmi:id="_JhB00EOaEeyhjNP-6OXdIA" elementId="org.eclipse.ui.views.ContentOutline" toBeRendered="false" ref="_JhB28kOaEeyhjNP-6OXdIA"/>
-                <children xsi:type="advanced:Placeholder" xmi:id="_JhB00UOaEeyhjNP-6OXdIA" elementId="org.tizen.common.lv.view" ref="_JhB29UOaEeyhjNP-6OXdIA"/>
-                <children xsi:type="advanced:Placeholder" xmi:id="_JhB00kOaEeyhjNP-6OXdIA" elementId="org.tizen.web.unittest.views.resultView" ref="_JhB2-EOaEeyhjNP-6OXdIA"/>
-                <children xsi:type="advanced:Placeholder" xmi:id="_JhB000OaEeyhjNP-6OXdIA" elementId="org.eclipse.ui.views.ProgressView" ref="_JhB3LEOaEeyhjNP-6OXdIA"/>
+                <children xsi:type="advanced:Placeholder" xmi:id="_JhB00UOaEeyhjNP-6OXdIA" elementId="org.tizen.common.lv.view" toBeRendered="false" ref="_JhB29UOaEeyhjNP-6OXdIA"/>
+                <children xsi:type="advanced:Placeholder" xmi:id="_JhB00kOaEeyhjNP-6OXdIA" elementId="org.tizen.web.unittest.views.resultView" toBeRendered="false" ref="_JhB2-EOaEeyhjNP-6OXdIA"/>
+                <children xsi:type="advanced:Placeholder" xmi:id="_JhB000OaEeyhjNP-6OXdIA" elementId="org.eclipse.ui.views.ProgressView" toBeRendered="false" ref="_JhB3LEOaEeyhjNP-6OXdIA"/>
                 <children xsi:type="advanced:Placeholder" xmi:id="_JhB01EOaEeyhjNP-6OXdIA" elementId="org.eclipse.ui.console.ConsoleView:Console View #1" ref="_JhB3M0OaEeyhjNP-6OXdIA"/>
               </children>
             </children>
@@ -86,9 +87,15 @@
       <tags>categoryTag:Help</tags>
     </sharedElements>
     <sharedElements xsi:type="advanced:Area" xmi:id="_JhB2M0OaEeyhjNP-6OXdIA" elementId="org.eclipse.ui.editorss" selectedElement="_JhB2NEOaEeyhjNP-6OXdIA">
-      <children xsi:type="basic:PartStack" xmi:id="_JhB2NEOaEeyhjNP-6OXdIA" elementId="org.eclipse.e4.primaryDataStack">
+      <children xsi:type="basic:PartStack" xmi:id="_JhB2NEOaEeyhjNP-6OXdIA" elementId="org.eclipse.e4.primaryDataStack" selectedElement="_GGfeoHjvEey5pJgnob-KTA">
         <tags>org.eclipse.e4.primaryDataStack</tags>
         <tags>EditorStack</tags>
+        <children xsi:type="basic:Part" xmi:id="_GGfeoHjvEey5pJgnob-KTA" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="index.html" iconURI="platform:/plugin/org.tizen.web.editor.html/icons/html_file.png" closeable="true">
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.tizen.web.editor.html.HTMLEditor&quot; name=&quot;index.html&quot; partName=&quot;index.html&quot; title=&quot;index.html&quot; tooltip=&quot;AppTV/index.html&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/AppTV/index.html&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;642&quot; selectionTopPixel=&quot;0&quot;/>&#xD;&#xA;&lt;/editor>"/>
+          <tags>Editor</tags>
+          <tags>org.tizen.web.editor.html.HTMLEditor</tags>
+          <tags>removeOnHide</tags>
+        </children>
       </children>
     </sharedElements>
     <sharedElements xsi:type="basic:Part" xmi:id="_JhB2tkOaEeyhjNP-6OXdIA" elementId="org.eclipse.ui.navigator.ProjectExplorer" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Project Explorer" iconURI="platform:/plugin/org.eclipse.ui.navigator.resources/icons/full/eview20/resource_persp.png" tooltip="" closeable="true">
@@ -97,6 +104,8 @@
       <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;view CommonNavigator.LINKING_ENABLED=&quot;0&quot; org.eclipse.cdt.ui.cview.groupincludes=&quot;false&quot; org.eclipse.cdt.ui.cview.groupmacros=&quot;false&quot; org.eclipse.cdt.ui.editor.CUChildren=&quot;true&quot; org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets=&quot;0&quot;>&#xD;&#xA;&lt;lastRecentlyUsedFilters/>&#xD;&#xA;&lt;/view>"/>
       <tags>View</tags>
       <tags>categoryTag:General</tags>
+      <tags>active</tags>
+      <tags>activeOnClose</tags>
       <menus xmi:id="_JhB2t0OaEeyhjNP-6OXdIA" elementId="org.eclipse.ui.navigator.ProjectExplorer">
         <tags>ViewMenu</tags>
         <tags>menuContribution:menu</tags>
@@ -166,7 +175,6 @@
       <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;view/>"/>
       <tags>View</tags>
       <tags>categoryTag:General</tags>
-      <tags>highlighted</tags>
       <menus xmi:id="_JhB3EEOaEeyhjNP-6OXdIA" elementId="org.eclipse.ui.console.ConsoleView">
         <tags>ViewMenu</tags>
         <tags>menuContribution:menu</tags>
@@ -193,8 +201,6 @@
       <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;view/>"/>
       <tags>View</tags>
       <tags>categoryTag:General</tags>
-      <tags>active</tags>
-      <tags>activeOnClose</tags>
       <menus xmi:id="_JhB3LUOaEeyhjNP-6OXdIA" elementId="org.eclipse.ui.views.ProgressView">
         <tags>ViewMenu</tags>
         <tags>menuContribution:menu</tags>
@@ -203,7 +209,7 @@
         <tags>menuContribution:popup</tags>
         <tags>popup:org.eclipse.ui.views.ProgressView</tags>
       </menus>
-      <toolbar xmi:id="_JhB3MUOaEeyhjNP-6OXdIA" elementId="org.eclipse.ui.views.ProgressView"/>
+      <toolbar xmi:id="_JhB3MUOaEeyhjNP-6OXdIA" elementId="org.eclipse.ui.views.ProgressView" visible="false"/>
     </sharedElements>
     <sharedElements xsi:type="basic:Part" xmi:id="_JhB3M0OaEeyhjNP-6OXdIA" elementId="org.eclipse.ui.console.ConsoleView:Console View #1" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Console" iconURI="platform:/plugin/org.eclipse.ui.console/icons/full/cview20/console_view.png" tooltip="" closeable="true">
       <persistedState key="originalCompatibilityViewBundle" value="org.eclipse.ui.console"/>
@@ -223,7 +229,7 @@
         <tags>menuContribution:popup</tags>
         <tags>popup:org.eclipse.ui.MessageConsole.#ContextMenu</tags>
       </menus>
-      <toolbar xmi:id="_JhB3N0OaEeyhjNP-6OXdIA" elementId="org.eclipse.ui.console.ConsoleView" visible="false"/>
+      <toolbar xmi:id="_JhB3N0OaEeyhjNP-6OXdIA" elementId="org.eclipse.ui.console.ConsoleView"/>
     </sharedElements>
     <trimBars xmi:id="_JhB3REOaEeyhjNP-6OXdIA" elementId="org.eclipse.ui.main.toolbar" contributorURI="platform:/plugin/org.eclipse.ui.workbench">
       <children xsi:type="menu:ToolBar" xmi:id="_JhB3RUOaEeyhjNP-6OXdIA" elementId="group.file" toBeRendered="false">
@@ -232,7 +238,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_JhB3R0OaEeyhjNP-6OXdIA" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_aiBOUEbAEeyXwMERp9lV-g" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_JhCBiEOaEeyhjNP-6OXdIA"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_Ngx1MHkLEeyMl_Pw2CfN7Q" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_JhCBiEOaEeyhjNP-6OXdIA"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_JhB3VkOaEeyhjNP-6OXdIA" elementId="additions" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -250,7 +256,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_JhB3sEOaEeyhjNP-6OXdIA" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_aiGG0EbAEeyXwMERp9lV-g" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_JhCBNUOaEeyhjNP-6OXdIA"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_Ng2tsHkLEeyMl_Pw2CfN7Q" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_JhCBNUOaEeyhjNP-6OXdIA"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_JhB3w0OaEeyhjNP-6OXdIA" elementId="group.editor" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -284,9 +290,22 @@
         <tags>Draggable</tags>
       </children>
     </trimBars>
-    <trimBars xmi:id="_JhB31UOaEeyhjNP-6OXdIA" elementId="org.eclipse.ui.trim.vertical1" contributorURI="platform:/plugin/org.eclipse.ui.workbench" side="Left"/>
+    <trimBars xmi:id="_JhB31UOaEeyhjNP-6OXdIA" elementId="org.eclipse.ui.trim.vertical1" contributorURI="platform:/plugin/org.eclipse.ui.workbench" toBeRendered="false" side="Left">
+      <children xsi:type="menu:ToolControl" xmi:id="_-xqJoHjvEey5pJgnob-KTA" elementId="org.eclipse.ui.navigator.ProjectExplorerMStack(IDEWindow).(org.tizen.web.ui.perspective.WebWidget)" toBeRendered="false" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.addons.swt/org.eclipse.e4.ui.workbench.addons.minmax.TrimStack">
+        <tags>TrimStack</tags>
+        <tags>Draggable</tags>
+      </children>
+    </trimBars>
     <trimBars xmi:id="_JhB31kOaEeyhjNP-6OXdIA" elementId="org.eclipse.ui.trim.vertical2" contributorURI="platform:/plugin/org.eclipse.ui.workbench" side="Right">
       <children xsi:type="menu:ToolControl" xmi:id="_SiJJIEZ9EeyvUI57wLGVjQ" elementId="org.eclipse.ui.views.ProblemViewMStack(IDEWindow).(org.tizen.web.ui.perspective.WebWidget)" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.addons.swt/org.eclipse.e4.ui.workbench.addons.minmax.TrimStack">
+        <tags>TrimStack</tags>
+        <tags>Draggable</tags>
+      </children>
+      <children xsi:type="menu:ToolControl" xmi:id="_sWTooHjvEey5pJgnob-KTA" elementId="org.eclipse.ui.views.ContentOutlineMStack(IDEWindow).(org.tizen.web.ui.perspective.WebWidget)" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.addons.swt/org.eclipse.e4.ui.workbench.addons.minmax.TrimStack">
+        <tags>TrimStack</tags>
+        <tags>Draggable</tags>
+      </children>
+      <children xsi:type="menu:ToolControl" xmi:id="_-yDyQHjvEey5pJgnob-KTA" elementId="org.eclipse.ui.editorss(IDEWindow).(org.tizen.web.ui.perspective.WebWidget)" toBeRendered="false" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.addons.swt/org.eclipse.e4.ui.workbench.addons.minmax.TrimStack">
         <tags>TrimStack</tags>
         <tags>Draggable</tags>
       </children>
@@ -2275,7 +2294,7 @@
   <addons xmi:id="_JhCCn0OaEeyhjNP-6OXdIA" elementId="MinMax Addon" contributorURI="platform:/plugin/org.eclipse.ui.workbench" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.addons.swt/org.eclipse.e4.ui.workbench.addons.minmax.MinMaxAddon"/>
   <addons xmi:id="_JhCCoEOaEeyhjNP-6OXdIA" elementId="org.eclipse.ui.workbench.addon.0" contributorURI="platform:/plugin/org.eclipse.ui.workbench" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.HandlerProcessingAddon"/>
   <addons xmi:id="_JhCCoUOaEeyhjNP-6OXdIA" elementId="SplitterAddon" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.addons.swt/org.eclipse.e4.ui.workbench.addons.splitteraddon.SplitterAddon"/>
-  <addons xmi:id="_Z8YxsEbAEeyXwMERp9lV-g" elementId="org.eclipse.ui.ide.addon.0" contributionURI="bundleclass://org.eclipse.ui.ide/org.eclipse.ui.internal.ide.addons.SaveAllDirtyPartsAddon"/>
+  <addons xmi:id="_IYS0IKimEeS11vbz3f9ezw" elementId="org.eclipse.ui.ide.addon.0" contributorURI="platform:/plugin/org.eclipse.ui.ide" contributionURI="bundleclass://org.eclipse.ui.ide/org.eclipse.ui.internal.ide.addons.SaveAllDirtyPartsAddon"/>
   <addons xmi:id="_JhCCo0OaEeyhjNP-6OXdIA" elementId="org.eclipse.ui.ide.application.addon.0" contributorURI="platform:/plugin/org.eclipse.ui.ide.application" contributionURI="bundleclass://org.eclipse.ui.ide.application/org.eclipse.ui.internal.ide.application.addons.ModelCleanupAddon"/>
   <categories xmi:id="_JhCCpEOaEeyhjNP-6OXdIA" elementId="org.eclipse.ui.category.edit" name="Edit"/>
   <categories xmi:id="_JhCCpUOaEeyhjNP-6OXdIA" elementId="org.eclipse.ui.category.textEditor" name="Text Editing" description="Text Editing Commands"/>

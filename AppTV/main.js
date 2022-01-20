@@ -3,6 +3,7 @@ function goBack() {
 }
 window.addEventListener('keydown', handleKeyCode);
 
+
 // var index = 0
 // var nextFeature = function (prevBtnElement, nextBtnElement, containItemElement,carouselWidth) {
 //   index++;

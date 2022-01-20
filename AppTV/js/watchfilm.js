@@ -48,7 +48,7 @@
 buildTable1();
 function buildTable1() {
   $.ajax({
-    url: "http://115.78.230.192:59025/api/film",
+    url: "http://115.78.230.192:59064/api/film",
     type: "GET",
     dataType: "json",
     success: function success(data, textStatus, xhr) {

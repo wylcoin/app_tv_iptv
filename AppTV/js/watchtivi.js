@@ -181,6 +181,8 @@ next.addEventListener("click", nextFeature);
 
 // handle keycode remote
 var handleKeyCode = function (event) {
+  // console.log(event.keyCode);
+
   switch (event.keyCode) {
     case 10009:
       goBack();

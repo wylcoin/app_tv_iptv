@@ -1,37 +1,17 @@
+// window.addEventListener("keydown", handleKeyCode);
 function goBack() {
-    window.history.back();
+  window.history.back();
 }
-window.addEventListener('keydown', handleKeyCode);
-
-
-// var index = 0
-// var nextFeature = function (prevBtnElement, nextBtnElement, containItemElement,carouselWidth) {
-//   index++;
-//   prevBtnElement.classList.add("show");
-//   containItemElement.style.transform = "translateX(-" + index * carouselWidth + "px)";
-
-//   if (track.offsetWidth - index * carouselWidth < carouselWidth) {
-//     nextBtnElement.classList.add("hide");
-//   }
-// };
-// var prevFeature = function(prevBtnElement, nextBtnElement, containItemElement,carouselWidth) {
-//   index--;
-//   nextBtnElement.classList.remove("hide");
-//   if (index === 0) {
-//     prevBtnElement.classList.remove("show");
-//   }
-//   containItemElement.style.transform = "translateX(-" + index * carouselWidth + "px)";
-// }
-
-
 
 // handle keycode remote
-var handleKeyCode = function(event) {
+var handleKeyCode = function (event) {
+  console.log(event.keyCode);
   switch (event.keyCode) {
     case 10009:
-      goBack();
+      window.history.back();
+      // alert("return click");
       break;
-  
+
     default:
       console.log(event.keyCode);
       break;

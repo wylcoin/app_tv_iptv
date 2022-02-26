@@ -28,23 +28,6 @@ var chanelList = [
   { IMG: "assets/Disney.png", TEN: "Disney", id: 25 },
 ];
 
-function getPartHaft(select) {
-  var lengthHaft = Math.round(chanelList.length / 2);
-
-  if (select === 1) {
-    var part1 = [];
-    for (var i = 0; i < lengthHaft; i++) {
-      part1.push(chanelList[i]);
-    }
-    return part1;
-  } else {
-    var part2 = [];
-    for (var i = lengthHaft; i < chanelList.length; i++) {
-      part2.push(chanelList[i]);
-    }
-    return part2;
-  }
-}
 
 // console.log(getPartHaft(1), getPartHaft(2));
 
@@ -114,7 +97,7 @@ var carouselWidth = document.querySelector(
 ).offsetWidth;
 
 var menuItemList = document.querySelectorAll(".chanel-item");
-var itemSlideWidth = $(".img-wrap").offsetWidth ;
+var itemSlideWidth = $(".img-wrap").offsetWidth;
 
 window.addEventListener("resize", () => {
   carouselWidth = document.querySelector(
@@ -124,7 +107,7 @@ window.addEventListener("resize", () => {
 var index = 0;
 loopOrderList(index, menuItemList);
 var nextFeature = function () {
-  track.style.transform = "translateX(-" + (index * itemSlideWidth)/2 + "px)";
+  track.style.transform = "translateX(-" + (index * itemSlideWidth) / 2 + "px)";
   if (index >= menuItemList.length - 1) {
     // track.style.transform = "translateX(-" + index * itemSlideWidth + "px)";
     index = 0;
@@ -140,7 +123,7 @@ var prevFeature = function () {
   if (index <= 0) {
     index = menuItemList.length - 1;
   } else index--;
-  track.style.transform = "translateX(-" + (index * itemSlideWidth)/2 + "px)";
+  track.style.transform = "translateX(-" + (index * itemSlideWidth) / 2 + "px)";
   loopOrderList(index, menuItemList);
   // next.classList.remove("hide");
   // if (index === 0) {
@@ -162,14 +145,14 @@ function loopOrderList(currentIndex, someList) {
   }
 }
 
-var objInput  = {
+var objInput = {
   name: 'nasdsdsdsm'
 }
 var isVisiable = false;
 
 
 (function reset() {
-  if(!isVisiable) {
+  if (!isVisiable) {
 
     objInput.name = ''
   }

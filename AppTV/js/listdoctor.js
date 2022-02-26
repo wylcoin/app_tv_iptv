@@ -40,7 +40,7 @@
 
 
 
-
+var items
 buildTable1()
 function buildTable1(){
     $.ajax({
@@ -48,26 +48,127 @@ function buildTable1(){
       type: 'GET',
       dataType: 'json',
       success: function (data, textStatus, xhr) {
-        var tb1 = document.getElementById('idd1')
+        var tb1 = document.getElementById('doctor-list')
         for(var i = 0; i < data.length/5; i++)
         {
-            var row1 = '<div style="display: flex;" id="id'+i+'"></div>'
+            var row1 = '<ul class="item-group" style="display: flex;" id="id'+i+'"></ul>'
             tb1.innerHTML+=row1       
             
             var tb2 = document.getElementById('id'+i)
+            var x = 0;
+
             for(var j =i*5; j < 5*i+5; j++)
             {
               if(j<data.length)
               {
-                var row2 = '<div class="wrap">'
+                var row2 = '<li class="wrap item"'+'data-position="'+x+'-'+i+'"'+'>'
                                 +'<img src="assets/'+data[j].image+'" style="width:100%;"/>'  
                                 +'<p class="stylep" style="font-weight: 600;">'+data[j].name+'</p>'                       
                                 +'<p class="stylep" style="color:gray">'+data[j].dname+'</p>'  
-                            +'</div>'
+                            +'</li>'
+                            x++
                     tb2.innerHTML+=row2
               } 
             }
-        }        
+        }      
+        // async... fix is in 1st load
+        items  = document.querySelectorAll('.item')
+        loadItemActive();
       },
   });  
+}
+
+var defaultPosition = "0-0"; //x-y
+var currentX = Number(defaultPosition.split("-")[0]);
+var currentY = Number(defaultPosition.split("-")[1]);
+
+// var items =  document.getElementsByClassName('item')
+
+
+
+function loadItemActive() {
+  for (const element of items) {
+    const pos = element.dataset.position;
+    console.log(element);
+    if (pos === defaultPosition) {
+      element.classList.add("active");
+    } else element.classList.remove("active");
+  }
+}
+
+function getNewCurrentPosition() {
+  return currentX + "-" + currentY;
+}
+function isValidNode(location) {
+  let positions = [];
+  for (const node of items) {
+    const position = node.dataset.position;
+    positions.push(position);
+  }
+  return positions.includes(location);
+}
+function handlePosition(num, axis) {
+  if (axis === "x") {
+    if (isValidNode(currentX + num + "-" + currentY)) {
+      currentX = currentX + num;
+      handleScrollTvIntoView();
+    }
+  } else {
+    if (isValidNode(currentX + "-" + (currentY + num))) {
+      currentY = currentY + num;
+      handleScrollTvIntoView();
+    }
+  }
+  defaultPosition = getNewCurrentPosition();
+  loadItemActive();
+}
+window.onkeydown = function (e) {
+  // console.log(e.keyCode);
+  switch (e.keyCode) {
+    case 37:
+      //   "x--"
+      handlePosition(-1, "x");
+      break;
+    case 38:
+      //   "y--"
+      handlePosition(-1, "y");
+      break;
+    case 39:
+      //   "x++"
+      handlePosition(1, "x");
+      break;
+    case 40:
+      //   "y++"
+      handlePosition(1, "y");
+      break;
+    case 13:
+      for (const node of items) {
+        const locationItem = node.dataset.position;
+
+        if (locationItem === defaultPosition) {
+          // console.log(locationItem,node);
+          node.onclick = function () {
+            console.log("im here ", node);
+          };
+          node.click();
+        }
+      }
+
+      break;
+      case 10009: 
+      goBack()
+      break;
+    default:
+      break;
+  }
+};
+
+function handleScrollTvIntoView() {
+  setTimeout(function () {
+    document.querySelector(".item.active").scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+      inline: "end",
+    });
+  }, 350);
 }

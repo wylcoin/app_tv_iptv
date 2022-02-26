@@ -11,8 +11,8 @@
 </head>
 
 <body>
-  <div class="content">
-    <d iv class="div2">
+  <div class="content container">
+    <div class="div2">
       <svg onclick="goBack()" class="pointer" version="1.1" id="Capa_1" width="30" height="30"
         xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
         viewBox="0 0 489.9 489.9" style="enable-background: new 0 0 489.9 489.9; margin: 25px 0 0 100px"
@@ -24,14 +24,14 @@
       <p style="font-size: 24px; font-weight: 600; margin: 26px 0 0 20px">
         Giới thiệu
       </p>
-    </d>
-    <div style="
+    </div>
+    <div class="content" style="
           margin: 20px auto;
           width: 950px;
           text-align: justify;
           line-height: 1.5;
         ">
-      <img src="./assets/BVHD1.png" style="width: 900px; height: 308px" />
+      <img src="./assets/BVHD1.png" style=" height: 325.3px" />
       <h2>Giới thiệu bệnh viện Hồng Đức III</h2>
       <p>
         Ra đời từ tháng 09 năm 2000 Bệnh Viện Đa Khoa Hồng Đức là nơi khám
@@ -132,6 +132,21 @@
   <script src="./main.js"></script>
   <script>
     window.addEventListener("keydown", handleKeyCode);
+    var content = document.querySelector('.content')
+
+
+    // window.onkeydown = function(e) {
+    //   if(e.keyCode === 38 || e.keyCode === 40) {
+    //     content.scrollIntoView({
+    //     behavior: 'smooth',
+    //     block: 'center',
+    //     inline: 'end'
+    //   })
+    //   }
+    // }
+    // window.onscroll = function () {
+      
+    // }
   </script>
 </body>
 

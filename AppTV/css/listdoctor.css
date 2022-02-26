@@ -21,6 +21,10 @@
   display: flex;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
 }
+.item-group {
+  list-style: none;
+  padding-left: 0;
+}
 
 .wrap
 {
@@ -33,6 +37,7 @@ border: 1px solid rgba(0, 0, 0, 0.15);
 box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
 position: relative;
 }
+.wrap.item.active,
 .wrap:hover
 {
 

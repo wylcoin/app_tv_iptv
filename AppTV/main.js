@@ -1,6 +1,6 @@
 // window.addEventListener("keydown", handleKeyCode);
 function goBack() {
-  window.history.back();
+  window.history.back()
 }
 
 // handle keycode remote
@@ -11,9 +11,10 @@ var handleKeyCode = function (event) {
       window.history.back();
       // alert("return click");
       break;
-
+    case 10252:  //node next: switch
+    console.log("node next clicked");
+    break;
     default:
-      console.log(event.keyCode);
       break;
   }
 };

@@ -59,7 +59,7 @@
   position: relative;
 }
 
-#carousel-chanel-container {
+#list-tv {
   min-width: 1200px;
   left: 128px;
   right: 128px;
@@ -93,9 +93,10 @@
   margin: 50px 10px 0 10px;
   text-decoration: none;
 }
-#carousel-chanel-container .chanel-name {
+#list-tv .chanel-name {
   font-size: 32px;
   color: #000;
+  text-align: center;
 }
 .stylep {
   width: 100%;
@@ -105,22 +106,22 @@
   margin: 0;
 }
 
-#carousel-chanel-container .carousel-inner {
+/* #list-tv .carousel-inner {
   overflow: hidden;
-}
-#carousel-chanel-container .btn-prev {
+} */
+#list-tv .btn-prev {
   position: absolute;
   left: 5px;
 }
 /* btn control slider */
-#carousel-chanel-container .nav-group {
+#list-tv .nav-group {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   left: 0;
   right: 0;
 }
-#carousel-chanel-container .btn {
+#list-tv .btn {
   position: absolute;
   width: 60px;
   height: 60px;
@@ -129,19 +130,18 @@
   cursor: pointer;
   background: rgba(179, 176, 176, 0.5);
 }
-#carousel-chanel-container .prev {
+#list-tv .prev {
   left: 5px;
   display: none;
 }
-#carousel-chanel-container .prev.show {
+#list-tv .prev.show {
   display: block;
 }
-#carousel-chanel-container .next {
+#list-tv .next {
   right: 5px;
 }
-#carousel-chanel-container .next.hide {
+#list-tv .next.hide {
   display: none;
 }
-
 @media (min-width: 1201px) {
 }

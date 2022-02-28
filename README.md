@@ -110,4 +110,3 @@ var paramObj = param;
 **Author: by iron2014 - 28/02/2022**
 ```
 - Download Tizen studio [here:](https://developer.samsung.com/smarttv/develop/tools/tizen-studio.html) 
-![champion]](https://s120-ava-talk.zadn.vn/4/0/f/7/2/120/f303667ebba2375ab6f4d920557a840c.jpg)

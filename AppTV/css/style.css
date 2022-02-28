@@ -23,6 +23,7 @@ body {
   background-color: red;
   color: white;
 }
+.insertBtn.currentTab,
 .insertBtn.active {
   background-color: red;
   color: white;

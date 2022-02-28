@@ -66,7 +66,7 @@ function buildTable1(data) {
 //   var elementWrapper = document.querySelector("#chanel-list-slider");
 //   var row1 = '<div class="chanel-group" id="id' + "" + '"></div>';
 //   var html = "";
-//   for (let i = 0; i < getPartHaft(1).length; i++) {
+//   for (var i = 0; i < getPartHaft(1).length; i++) {
 //     var col =
 //       '<a href="#" class="chanel-item" tabindex="0" data-id="' +
 //       data[i].id +
@@ -82,7 +82,7 @@ function buildTable1(data) {
 //       "</a>";
 //     html += col;
 //   }
-//   for (let i = 0; i < getPartHaft(2).length; i++) {}
+//   for (var i = 0; i < getPartHaft(2).length; i++) {}
 
 //   elementWrapper.innerHTML = html;
 // }
@@ -131,7 +131,7 @@ var prevFeature = function () {
   // }
 };
 function loopOrderList(currentIndex, someList) {
-  for (let i = 0; i < someList.length; i++) {
+  for (var i = 0; i < someList.length; i++) {
     var idItem = someList[i].dataset.id;
     var index = chanelList.findIndex((i) => {
       return i.id == parseInt(idItem);

@@ -16,7 +16,7 @@
 .food-item {
   display: flex;
   flex-direction: column;
-  margin: 0;
+  margin: 8px 0;
   padding: 4px !important;
 }
 .food-wap {

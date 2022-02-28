@@ -1,5 +1,5 @@
 
-// const inf = [
+// var inf = [
 //   {"IMG":"assets/EndGame.png", "TEN":"End Game"},
 //   {"IMG":"assets/BlackWidow.png", "TEN":"Black Widow"},
 //   {"IMG":"assets/Mission6.png", "TEN":"Mission: Impossible 6"},
@@ -86,8 +86,8 @@ var items =  document.getElementsByClassName('film-item')
 console.log(items);
 
 function loadItemActive() {
-  for (const element of items) {
-    const pos = element.dataset.position;
+  for (var element of items) {
+    var pos = element.dataset.position;
     if (pos === defaultPosition) {
       //   console.log(element);
       element.classList.add("active");
@@ -99,9 +99,9 @@ function getNewCurrentPosition() {
   return currentX + "-" + currentY;
 }
 function isValidNode(location) {
-  let positions = [];
-  for (const node of items) {
-    const position = node.dataset.position;
+  var positions = [];
+  for (var node of items) {
+    var position = node.dataset.position;
     positions.push(position);
   }
   return positions.includes(location);
@@ -141,8 +141,8 @@ window.onkeydown = function (e) {
       handlePosition(1, "y");
       break;
     case 13:
-      for (const node of items) {
-        const locationItem = node.dataset.position;
+      for (var node of items) {
+        var locationItem = node.dataset.position;
 
         if (locationItem === defaultPosition) {
           // console.log(locationItem,node);

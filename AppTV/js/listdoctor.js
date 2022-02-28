@@ -1,4 +1,4 @@
-// const inf = [
+// var inf = [
 //     {"IMG":"assets/PhamVanBung.png", "TEN":"Ts. Bs. CKII Phạm Văn Bùng", "KHOA":"Khoa ung bướu"},
 //     {"IMG":"assets/NguyenMinhHung.png", "TEN":"Ts. Bs. Nguyễn Minh Hùng", "KHOA":"Khoa ung bướu"},
 //     {"IMG":"assets/LeVanHoai.png", "TEN":"Bs. CKII Lê Văn Hoài", "KHOA":"Khoa ung bướu"},
@@ -87,8 +87,8 @@ var currentY = Number(defaultPosition.split("-")[1]);
 
 
 function loadItemActive() {
-  for (const element of items) {
-    const pos = element.dataset.position;
+  for (var element of items) {
+    var pos = element.dataset.position;
     console.log(element);
     if (pos === defaultPosition) {
       element.classList.add("active");
@@ -100,9 +100,9 @@ function getNewCurrentPosition() {
   return currentX + "-" + currentY;
 }
 function isValidNode(location) {
-  let positions = [];
-  for (const node of items) {
-    const position = node.dataset.position;
+  var positions = [];
+  for (var node of items) {
+    var position = node.dataset.position;
     positions.push(position);
   }
   return positions.includes(location);
@@ -142,8 +142,8 @@ window.onkeydown = function (e) {
       handlePosition(1, "y");
       break;
     case 13:
-      for (const node of items) {
-        const locationItem = node.dataset.position;
+      for (var node of items) {
+        var locationItem = node.dataset.position;
 
         if (locationItem === defaultPosition) {
           // console.log(locationItem,node);

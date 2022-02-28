@@ -131,7 +131,7 @@ document.addEventListener("keydown", function (e) {
       }
       break;
     case 13:
-      for (let i = 0; i < menuItemList.length; i++) {
+      for (var i = 0; i < menuItemList.length; i++) {
         if (index == i) {
           console.log("item clicked: ", menuItemList[i]);
           var href = [menuItemList[i].href]
@@ -144,7 +144,7 @@ document.addEventListener("keydown", function (e) {
 });
 
 function loopOrderList(currentIndex, someList) {
-  for (let i = 0; i < someList.length; i++) {
+  for (var i = 0; i < someList.length; i++) {
     var index = someList[i].dataset.index;
     if (currentIndex == index) {
       someList[i].classList.add("active");

@@ -46,25 +46,32 @@
 // }
 // document.getElementById("val1").innerHTML = String(tosubTotal);
 // document.getElementById("val2").innerHTML = String(subTotal2)+"K";
-
+var current_id_category = 0;
 /// Lấy dữ liệu lên table detail
 var baseAPi = "http://115.78.230.192:59064/api";
 var menuIndex = 0;
 var foodIndex = 0;
-var menuList = document.querySelectorAll(".insertBtn");
+var menuList;
 var btnNavs = [
-  { label: "Tất cả ", iconUri: "./assets/start_outline.svg", class: "all" },
-  { label: "Đồ ăn", iconUri: "./assets/food.svg", class: "food" },
-  { label: "Nước", iconUri: "./assets/glass.svg", class: "water" },
-  { label: "Bánh", iconUri: "./assets/cake.svg", class: "cake" },
+  {
+    label: "Tất cả ",
+    iconUri: "./assets/start_outline.svg",
+    class: "all",
+    id: "0",
+  },
+  { label: "Đồ ăn", iconUri: "./assets/food.svg", class: "food", id: "4" },
+  { label: "Nước", iconUri: "./assets/glass.svg", class: "water", id: "5" },
+  { label: "Bánh", iconUri: "./assets/cake.svg", class: "cake", id: "6" },
 ];
 
 function renderMenuNav() {
   var html = "";
   var btnParent = document.querySelector("#menu-list");
-  for (let i = 0; i < btnNavs.length; i++) {
-    const btn = btnNavs[i];
-    var btnTemplateStr = `<button  class="insertBtn item" data-position="${0}-${i}" onclick="myFunction${
+  for (var i = 0; i < btnNavs.length; i++) {
+    var btn = btnNavs[i];
+    var btnTemplateStr = `<button  data-id=${
+      btn.id
+    } class="insertBtn item" data-position="${0}-${i}" onclick="myFunction${
       i + 1
     }()">
         <img class="img-menu ${btn.class}" src="${btn.iconUri}" alt="${
@@ -75,6 +82,8 @@ function renderMenuNav() {
     html += btnTemplateStr;
   }
   btnParent.innerHTML = html;
+  menuList = document.querySelectorAll(".insertBtn");
+  loadActiveTab(menuList, current_id_category);
 }
 var items = document.getElementsByClassName("item");
 
@@ -91,7 +100,7 @@ function handlePrevMenuActive() {
   } else menuIndex--;
 }
 function menuClicked() {
-  for (let i = 0; i < menuList.length; i++) {
+  for (var i = 0; i < menuList.length; i++) {
     if (menuIndex == i) {
       menuList[i].click();
     }
@@ -99,7 +108,7 @@ function menuClicked() {
 }
 
 function loadMenuActive(domList) {
-  for (let i = 0; i < domList.length; i++) {
+  for (var i = 0; i < domList.length; i++) {
     if (menuIndex === i) {
       domList[i].classList.add("active");
     } else domList[i].classList.remove("active");
@@ -196,8 +205,8 @@ var text = "";
 //   text = ctrl.getElementsByTagName("p")[0].innerHTML;
 // }
 function setIDfood(element) {
-  console.log(element.dataset.id);
-  text =  element.dataset.id
+  // console.log(element.dataset.id);
+  text = element.dataset.id;
 }
 function insertOrderDetail() {
   var data = {
@@ -343,16 +352,24 @@ function UpdateOrderDetail() {
 //   });
 // }
 
-function innerList(data) {
+function innerList(data, all) {
+  if (all) {
+    current_id_category = 0;
+  } else {
+    current_id_category = data[0].id_category;
+  }
+  console.log(current_id_category);
   var tb1 = document.getElementById("foodDrinkList");
-
+  loadActiveTab(menuList, current_id_category);
   var html = "";
   var x = 1;
   var y = 0;
   var newCol = false;
-  for (let i = 0; i < data.length; i++) {
+  for (var i = 0; i < data.length; i++) {
     var row2 =
-      '<div class=" col-lg-3 col-xxl-3 wrap item food-item" onclick="setIDfood(this);onOpen()" data-id="'+data[i].id+'" id="updateDetails' +
+      '<div class=" col-lg-3 col-xxl-3 wrap item food-item" onclick="setIDfood(this);onOpen()" data-id="' +
+      data[i].id +
+      '" id="updateDetails' +
       i +
       '" data-position="' +
       x +
@@ -419,32 +436,33 @@ function myFunction1() {
     type: "GET",
     dataType: "json",
     success: function (data, textStatus, xhr) {
-      innerList(data);
+      innerList(data, "all");
     },
   });
 }
 
 //===========================================================================================================
 //===========================================================================================================
-var ages2 = [];
+// var ages2 = [];
 
-$.ajax({
-  url: baseAPi + "/order",
-  type: "GET",
-  dataType: "json",
-  success: function (data, textStatus, xhr) {
-    for (var i = 0; i < data.length; i++) {
-      if (data[i].id_category == "4") {
-        var element = {};
-        element.ID = data[i].id;
-        element.IMG = data[i].image;
-        element.TENMON = data[i].name;
-        element.GIA = data[i].price;
-        ages2.push(element);
-      }
-    }
-  },
-});
+// $.ajax({
+//   url: baseAPi + "/order",
+//   type: "GET",
+//   dataType: "json",
+//   success: function (data, textStatus, xhr) {
+//     for (var i = 0; i < data.length; i++) {
+//       if (data[i].id_category == "4") {
+//         current_id_category =  data[i].id_category
+//         var element = {};
+//         element.ID = data[i].id;
+//         element.IMG = data[i].image;
+//         element.TENMON = data[i].name;
+//         element.GIA = data[i].price;
+//         ages2.push(element);
+//       }
+//     }
+//   },
+// });
 
 //
 function myFunction2() {
@@ -521,11 +539,11 @@ var defaultPosition = "0-0"; //x-y
 var currentX = Number(defaultPosition.split("-")[0]);
 var currentY = Number(defaultPosition.split("-")[1]);
 
-console.log(items);
+// console.log(items);
 
 function loadItemActive() {
-  for (const element of items) {
-    const pos = element.dataset.position;
+  for (var element of items) {
+    var pos = element.dataset.position;
     if (pos === defaultPosition) {
       //   console.log(element);
       element.classList.add("active");
@@ -537,9 +555,9 @@ function getNewCurrentPosition() {
   return currentX + "-" + currentY;
 }
 function isValidNode(location) {
-  let positions = [];
-  for (const node of items) {
-    const position = node.dataset.position;
+  var positions = [];
+  for (var node of items) {
+    var position = node.dataset.position;
     positions.push(position);
   }
   var result = positions.indexOf(location);
@@ -550,8 +568,8 @@ function isValidNode(location) {
   return true;
 }
 function handlePosition(num, axis, key) {
-  if(key == 39 && currentY > 0) {
-    currentY = 0
+  if (key == 39 && currentY > 0) {
+    currentY = 0;
   }
 
   if (axis === "x") {
@@ -561,7 +579,7 @@ function handlePosition(num, axis, key) {
     }
   } else {
     if (isValidNode(currentX + "-" + (currentY + num))) {
-        currentY = currentY + num;
+      currentY = currentY + num;
       handleScrollTvIntoView();
     }
   }
@@ -587,9 +605,8 @@ function handleRemoteKey(e) {
   switch (e.keyCode) {
     case 13:
       // enter/ok
-      for (const node of items) {
-        const locationItem = node.dataset.position;
-
+      for (var node of items) {
+        var locationItem = node.dataset.position;
 
         if (locationItem === defaultPosition) {
           node.click();
@@ -626,6 +643,18 @@ function handleRemoteKey(e) {
       break;
     default:
       break;
+  }
+}
+function loadActiveTab(elements, idCategory) {
+  // console.log(idCategory);
+  for (let i = 0; i < elements.length; i++) {
+    var element = elements[i];
+    // console.log(element.dataset.id , idCategory);
+    if (element.dataset.id == idCategory) {
+      elements[i].classList.add("currentTab");
+    } else if (idCategory == 0) {
+      elements[i].classList.add("currentTab");
+    } else elements[i].classList.remove("currentTab");
   }
 }
 

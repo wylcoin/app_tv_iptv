@@ -155,9 +155,9 @@ window.onkeydown = function (e) {
       }
 
       break;
-      case 10009: 
-      goBack()
-      break;
+      // case 10009: 
+      // goBack()
+      // break;
     default:
       break;
   }

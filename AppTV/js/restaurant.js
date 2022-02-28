@@ -146,16 +146,16 @@ window.onkeydown = function (e) {
           // console.log(locationItem,node);
           node.onclick = function () {
             console.log("im here ", node);
-            alert("im here," + node.dataset.position);
+            // alert("im here," + node.dataset.position);
           };
           node.click();
         }
       }
 
       break;
-    case 10009:
-      goBack();
-      break;
+    // case 10009:
+    //   goBack();
+    //   break;
     default:
       break;
   }

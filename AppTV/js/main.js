@@ -192,8 +192,12 @@ function GetValues() {
 }
 // insert dữ chọn món vào table detail
 var text = "";
-function getIDfood(ctrl) {
-  text = ctrl.getElementsByTagName("p")[0].innerHTML;
+// function getIDfood(ctrl) {
+//   text = ctrl.getElementsByTagName("p")[0].innerHTML;
+// }
+function setIDfood(element) {
+  console.log(element.dataset.id);
+  text =  element.dataset.id
 }
 function insertOrderDetail() {
   var data = {
@@ -305,7 +309,7 @@ function UpdateOrderDetail() {
 //             var row2 =
 //               '<div class="wrap" id="updateDetails' +
 //               j +
-//               '" onclick="getIDfood(this)">' +
+//               '" onclick="setIDfood(this)">' +
 //               '<p style="display:none">' +
 //               data[j].id +
 //               "</p>" +
@@ -348,7 +352,7 @@ function innerList(data) {
   var newCol = false;
   for (let i = 0; i < data.length; i++) {
     var row2 =
-      '<div class=" col-lg-3 col-xxl-3 wrap item food-item" onclick="onOpen()" id="updateDetails' +
+      '<div class=" col-lg-3 col-xxl-3 wrap item food-item" onclick="setIDfood(this);onOpen()" data-id="'+data[i].id+'" id="updateDetails' +
       i +
       '" data-position="' +
       x +

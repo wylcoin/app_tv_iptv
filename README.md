@@ -6,7 +6,7 @@
 var baseAPi = "http://115.78.230.192:59064/api";
 ```
 
-## watch film
+## Watch film
 
 ```js
 var path = "/film";
@@ -15,7 +15,7 @@ var paramObj = {};
 var dataType: "json";
 ```
 
-## doctor list
+## Doctor list
 
 ```js
 var path = "/doctor";
@@ -37,7 +37,7 @@ var dataType: "json";
 
 ### Get order by id category
 
-Use filter method with condition:
+- Use filter method with condition:
 
 ```js
 item.id_category == "id_category";
@@ -105,7 +105,9 @@ var param = {
 var paramObj = param;
 ```
 
-#### Note: Use only js es5, jquery 1.9.1 
+#### Note: Use only js es5, jquery 1.9.1 not ~~es6~~ 
 ```ts
-Author: by iron2014 - 28/02/2022
+**Author: by iron2014 - 28/02/2022**
 ```
+- Download Tizen studio [here:](https://developer.samsung.com/smarttv/develop/tools/tizen-studio.html) 
+![champion]](https://s120-ava-talk.zadn.vn/4/0/f/7/2/120/f303667ebba2375ab6f4d920557a840c.jpg)

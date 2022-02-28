@@ -105,4 +105,7 @@ var param = {
 var paramObj = param;
 ```
 
-#### Note: Use only js es5, jquery 1.9.1
+#### Note: Use only js es5, jquery 1.9.1 
+```ts
+Author: by iron2014 - 28/02/2022
+```

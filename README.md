@@ -37,7 +37,7 @@ var dataType: "json";
 
 ### Get order by id category
 
-use method filter with condition:
+Use filter method with condition:
 
 ```js
 item.id_category == "id_category";

@@ -42,7 +42,7 @@ body {
 .wrap .lbl {
   position: absolute;
   top: 10%;
-  left: 100%;
+  left: 98%;
   background-color: red;
   color: white;
   transform: translate(-100%);

@@ -166,7 +166,7 @@ function handleScrollTvIntoView() {
     document.querySelector(".item.active").scrollIntoView({
       behavior: "smooth",
       block: "center",
-      inline: "end",
+      inline: "center",
     });
   }, 350);
 }

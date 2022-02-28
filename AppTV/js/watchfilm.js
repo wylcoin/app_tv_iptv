@@ -167,7 +167,7 @@ function handleScrollTvIntoView() {
     document.querySelector(".film-item.active").scrollIntoView({
       behavior: "smooth",
       block: "center",
-      inline: "end",
+      inline: "center",
     });
   }, 350);
 }

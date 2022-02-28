@@ -89,7 +89,9 @@
 .item-group {
   display: flex;
 }
-
+.food-item.active .food-wrap {
+  border: 1px solid red;
+}
 
 .insertBtn:first-child {
   margin-top: 100px;

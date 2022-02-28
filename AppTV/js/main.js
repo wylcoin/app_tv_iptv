@@ -48,7 +48,7 @@
 // document.getElementById("val2").innerHTML = String(subTotal2)+"K";
 
 /// Lấy dữ liệu lên table detail
-var baseAPi = "http://115.78.230.192:59064/api"
+var baseAPi = "http://115.78.230.192:59064/api";
 var menuIndex = 0;
 var foodIndex = 0;
 var menuList = document.querySelectorAll(".insertBtn");
@@ -64,44 +64,19 @@ function renderMenuNav() {
   var btnParent = document.querySelector("#menu-list");
   for (let i = 0; i < btnNavs.length; i++) {
     const btn = btnNavs[i];
-    var btnTemplateStr = 
-    `<button  class="insertBtn item" data-position="${0}-${i}" onclick="myFunction${i + 1}()">
-        <img class="img-menu ${btn.class}" src="${btn.iconUri}" alt="${btn.label}">
+    var btnTemplateStr = `<button  class="insertBtn item" data-position="${0}-${i}" onclick="myFunction${
+      i + 1
+    }()">
+        <img class="img-menu ${btn.class}" src="${btn.iconUri}" alt="${
+      btn.label
+    }">
         <label class="lbl">${btn.label}</label>
     </button>`;
     html += btnTemplateStr;
   }
   btnParent.innerHTML = html;
 }
-var items =  document.getElementsByClassName('item')
-
-var listScrolled = "";
-function handleRemoteKey(e) {
-  switch (e.keyCode) {
-    case 13:
-      // enter/ok
-      menuClicked();
-      break;
-    case 39:
-      // arrow right
-
-      handleNextMenuActive();
-      break;
-    case 37:
-      // arrow left
-      handlePrevMenuActive();
-      break;
-    case 10009:
-      window.history.back();
-      // alert("return click");
-      break;
-    case 10252: //node next: switch
-      break;
-    default:
-      break;
-  }
-}
-
+var items = document.getElementsByClassName("item");
 
 function handleNextMenuActive() {
   loadMenuActive(menuList);
@@ -131,11 +106,9 @@ function loadMenuActive(domList) {
   }
 }
 
-
-
 function GetListOrderDetailByID() {
   $.ajax({
-    url: baseAPi+"/orderdetail",
+    url: baseAPi + "/orderdetail",
     type: "GET",
     dataType: "json",
     success: function (data, textStatus, xhr) {
@@ -192,7 +165,7 @@ var idord = 0;
 
 function GetValues() {
   $.ajax({
-    url: baseAPi+"/orderdetail",
+    url: baseAPi + "/orderdetail",
     type: "GET",
     dataType: "json",
     success: function (data, textStatus, xhr) {
@@ -213,6 +186,7 @@ function GetValues() {
       document.getElementById("val1").innerHTML = String(tosubTotal);
       document.getElementById("val2").innerHTML = String(subTotal2) + "K";
       document.getElementById("val3").innerHTML = "P" + String(idord);
+      loadItemActive();
     },
   });
 }
@@ -222,14 +196,14 @@ function getIDfood(ctrl) {
   text = ctrl.getElementsByTagName("p")[0].innerHTML;
 }
 function insertOrderDetail() {
-    var data = {
+  var data = {
     id_food: parseInt(text),
     id_order: parseInt(idord),
     quantity: parseInt($("#sl").val()),
   };
   console.log(data);
   $.ajax({
-    url: baseAPi+"/orderdetail",
+    url: baseAPi + "/orderdetail",
     headers: {
       "Access-Control-Allow-Origin": "*",
       "Access-Control-Allow-Credentials": "true",
@@ -262,7 +236,7 @@ function DeleteOrderDetail() {
   };
   // console.log(data1);
   $.ajax({
-    url: baseAPi+"/orderdetail",
+    url: baseAPi + "/orderdetail",
     headers: {
       "Access-Control-Allow-Origin": "*",
       "Access-Control-Allow-Credentials": "true",
@@ -290,7 +264,7 @@ function UpdateOrderDetail() {
   };
 
   $.ajax({
-    url: baseAPi+"/orderdetail",
+    url: baseAPi + "/orderdetail",
     headers: {
       "Access-Control-Allow-Origin": "*",
       "Access-Control-Allow-Credentials": "true",
@@ -369,15 +343,19 @@ function innerList(data) {
   var tb1 = document.getElementById("foodDrinkList");
 
   var html = "";
-  var x =1
-  var y = 0
-  var newCol = false
+  var x = 1;
+  var y = 0;
+  var newCol = false;
   for (let i = 0; i < data.length; i++) {
     var row2 =
-      '<div class="wrap food-item item col-lg-3 col-xxl-3" onclick="onOpen()" id="updateDetails' +
+      '<div class=" col-lg-3 col-xxl-3 wrap item food-item" onclick="onOpen()" id="updateDetails' +
       i +
-      '" data-position="'+x+'-'+y+'">' +
-      '<div class="food-wap">' +
+      '" data-position="' +
+      x +
+      "-" +
+      y +
+      '">' +
+      '<div class="food-wrap">' +
       '<p style="display:none">' +
       data[i].id +
       "</p>" +
@@ -396,20 +374,19 @@ function innerList(data) {
       "</div>" +
       "</div>" +
       "</div>";
-      if(x >= 4) {
-        x = 1
-        newCol = true
-      }else {
-        x++ 
-        newCol = false
-      }
-      if(newCol === true) {
-        y++
-      }
+    if (x >= 4) {
+      x = 1;
+      newCol = true;
+    } else {
+      x++;
+      newCol = false;
+    }
+    if (newCol === true) {
+      y++;
+    }
     html += row2;
   }
   tb1.innerHTML = html;
-
 }
 function onOpen() {
   if (typeof favDialog.showModal === "function") {
@@ -420,11 +397,11 @@ function onOpen() {
 }
 function getData() {
   $.ajax({
-    url: baseAPi+"/order",
+    url: baseAPi + "/order",
     type: "GET",
     dataType: "json",
     success: function (data, textStatus, xhr) {
-      innerList(data)
+      innerList(data);
     },
   });
 }
@@ -434,11 +411,11 @@ function getData() {
 
 function myFunction1() {
   $.ajax({
-    url: baseAPi+"/order",
+    url: baseAPi + "/order",
     type: "GET",
     dataType: "json",
     success: function (data, textStatus, xhr) {
-      innerList(data)
+      innerList(data);
     },
   });
 }
@@ -448,7 +425,7 @@ function myFunction1() {
 var ages2 = [];
 
 $.ajax({
-  url: baseAPi+"/order",
+  url: baseAPi + "/order",
   type: "GET",
   dataType: "json",
   success: function (data, textStatus, xhr) {
@@ -465,18 +442,18 @@ $.ajax({
   },
 });
 
-// 
+//
 function myFunction2() {
   $.ajax({
-    url: baseAPi+"/order",
+    url: baseAPi + "/order",
     type: "GET",
     dataType: "json",
     success: function (data, textStatus, xhr) {
-      var foods = data.filter(function(item) {
-        return item.id_category == "4"
-      })
+      var foods = data.filter(function (item) {
+        return item.id_category == "4";
+      });
       // console.log(foods);
-      innerList(foods)
+      innerList(foods);
     },
   });
 }
@@ -486,36 +463,33 @@ function myFunction2() {
 
 function myFunction3() {
   $.ajax({
-    url: baseAPi+"/order",
+    url: baseAPi + "/order",
     type: "GET",
     dataType: "json",
     success: function (data, textStatus, xhr) {
-      var foods = data.filter(function(item) {
-        return item.id_category == "5"
-      })
+      var foods = data.filter(function (item) {
+        return item.id_category == "5";
+      });
       // console.log(foods);
-      innerList(foods)
+      innerList(foods);
     },
   });
-
 }
 
 //===========================================================================================================
 //===========================================================================================================
 
-
-
 function myFunction4() {
   $.ajax({
-    url: baseAPi+"/order",
+    url: baseAPi + "/order",
     type: "GET",
     dataType: "json",
     success: function (data, textStatus, xhr) {
-      var foods = data.filter(function(item) {
-        return item.id_category == "6"
-      })
+      var foods = data.filter(function (item) {
+        return item.id_category == "6";
+      });
       // console.log(foods);
-      innerList(foods)
+      innerList(foods);
     },
   });
 }
@@ -560,19 +534,22 @@ function getNewCurrentPosition() {
 }
 function isValidNode(location) {
   let positions = [];
-  console.log(items);
   for (const node of items) {
     const position = node.dataset.position;
     positions.push(position);
   }
-  var result = positions.indexOf(location)
+  var result = positions.indexOf(location);
 
-  if(result === -1) {
-    return false
-  } 
-  return true
+  if (result === -1) {
+    return false;
+  }
+  return true;
 }
-function handlePosition(num, axis) {
+function handlePosition(num, axis, key) {
+  if(key == 39 && currentY > 0) {
+    currentY = 0
+  }
+
   if (axis === "x") {
     if (isValidNode(currentX + num + "-" + currentY)) {
       currentX = currentX + num;
@@ -580,7 +557,7 @@ function handlePosition(num, axis) {
     }
   } else {
     if (isValidNode(currentX + "-" + (currentY + num))) {
-      currentY = currentY + num;
+        currentY = currentY + num;
       handleScrollTvIntoView();
     }
   }
@@ -588,13 +565,12 @@ function handlePosition(num, axis) {
   loadItemActive();
 }
 
-
 function handleScrollTvIntoView() {
   setTimeout(function () {
     document.querySelector(".item.active").scrollIntoView({
       behavior: "smooth",
       block: "center",
-      inline: "end",
+      inline: "center",
     });
   }, 350);
 }
@@ -602,48 +578,52 @@ function goBack() {
   window.history.back();
 }
 
-
-
-window.onkeydown = function (e) {
+// var listScrolled = "";
+function handleRemoteKey(e) {
   switch (e.keyCode) {
+    case 13:
+      // enter/ok
+      for (const node of items) {
+        const locationItem = node.dataset.position;
+
+
+        if (locationItem === defaultPosition) {
+          node.click();
+          // console.log("im here ", node);
+        }
+      }
+      break;
+    case 39:
+      // arrow right
+      handlePosition(1, "x", 39);
+
+      // handleNextMenuActive();
+      break;
+    case 40:
+      //   "y++"
+      handlePosition(1, "y");
+      break;
     case 37:
+      // arrow left
       //   "x--"
       handlePosition(-1, "x");
+      // handlePrevMenuActive();
       break;
     case 38:
       //   "y--"
 
       handlePosition(-1, "y");
       break;
-    case 39:
-      //   "x++"
-      handlePosition(1, "x");
-      break;
-    case 40:
-      //   "y++"
-      handlePosition(1, "y");
-      break;
-    case 13:
-      for (const node of items) {
-        const locationItem = node.dataset.position;
-
-        if (locationItem === defaultPosition) {
-          // console.log(locationItem,node);
-          node.onclick = function () {
-            console.log("im here ", node);
-          };
-          node.click();
-        }
-      }
-
-      break;
     case 10009:
-      goBack();
+      window.history.back();
+      // alert("return click");
+      break;
+    case 10252: //node next: switch
       break;
     default:
       break;
   }
-};
+}
 
 function render() {
   renderMenuNav();

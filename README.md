@@ -107,6 +107,6 @@ var paramObj = param;
 
 #### Note: Use only js es5, jquery 1.9.1 not ~~es6~~ 
 ```ts
-**Author: by iron2014 - 28/02/2022**
+Author: by iron2014 - 28/02/2022
 ```
-- Download Tizen studio [here:](https://developer.samsung.com/smarttv/develop/tools/tizen-studio.html) 
+- Download Tizen studio [here](https://developer.samsung.com/smarttv/develop/tools/tizen-studio.html) 

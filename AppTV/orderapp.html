@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/orderapp.css">
+    <link rel="shortcut icon" href="./assets/Order.png" type="image/x-icon">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Gọi món</title>
+</head>
+
+<body onload="getData()">
+    <script src="./js/jquery-1.9.1.js"></script>
+
+
+    <!-- <button onclick="GetListOrderDetailByID()">Get Value</button>
+    <button onclick="insertOrderDetail()">Insert</button>
+    <button onclick="DeleteOrderDetail()">Delete</button>
+    <button onclick="UpdateOrderDetail()">Update</button> -->
+    <!-- <p id="ala"></p> -->
+    <div style="display: flex; background-color: #FFF; position: relative;">
+        <div style='height:100vh; width: 130px; background-color: rgba(0, 0, 0, 0.04);'>
+            <div class="img-wrap">
+                <img src="./assets/arrow.svg" alt="arrow left" class="img-arrow">
+            </div>
+
+            <div id="menu-list">
+
+            </div>
+
+        </div>
+
+        <dialog id="favDialog" style="border: 1px solid rgba(0, 0, 0, 0.15); border-radius: 5px;">
+            <form method="dialog">
+                <div class="p-wrap">
+                    <P>Chọn số lượng</p>
+                </div>
+                <div style="margin-bottom: 30px;">
+                    <input 
+                        type="text" 
+                        class="text1" 
+                        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"  
+                        id="sl">
+                </div>
+
+                <button class="insertBtn4">Hủy</button>
+                <button class="insertBtn3" onclick="insertOrderDetail()">Ok</button>
+
+            </form>
+        </dialog>
+
+        <!-- list food and drink -->
+        <div style='height:100vh; width: 100%; overflow-y: auto;'>
+            <img src="assets/bvhd.png" style="padding: 5px 0 0 20px; width: 140px;height: 56px;">
+            <div id="foodDrinkList" class="food-list row">
+            </div>
+        </div>
+
+
+        <div style='height:100vh; width: 38%;position: relative; background-color: rgba(0, 0, 0, 0.04);'>
+            <div>
+                <div style=" height: 75px;margin: 10px 0 0 20px;">
+                    <h2>Danh sách gọi món</h2>
+                    <h2 style="margin-left: 100px;" id="val3"></h2>
+                </div>
+
+                <div>
+                    <table class="table" id="ttb">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Tên món</th>
+                                <th>SL</th>
+                                <th>Giá</th>
+                            </tr>
+                        </thead>
+                        <tbody id=myTB>
+
+                        </tbody>
+                        <td></td>
+                        <td style="font-weight: 600;">Tổng</td>
+                        <td id="val1" style="font-weight: 600;"></td>
+                        <td id="val2" style="font-weight: 600;"></td>
+                    </table>
+
+                </div>
+            </div>
+
+            <dialog id="favDialog1" class="modal-order-success">
+                <div>
+                    <div><img src="assets/check 1.svg" style="margin:30px 0 15px 170px"> </div>
+                    <div>
+                        <p style="font-weight: 600; font-size: 24px; margin: 0 0 30px 100px;">Đặt món thành công</p>
+                    </div>
+                </div>
+            </dialog>
+
+            <dialog id="favDialog2" class="dialog-edit">
+                <form method="dialog">
+                    <div class="edit-p-wrap" style="">
+                        <P>Chọn số lượng cập nhật
+                        </p>
+                    </div>
+                    <div style="margin-bottom: 30px;">
+                        <input type="text" class="text1" id="slud">
+                    </div>
+
+                    <button class="insertBtn4">Hủy</button>
+                    <button class="insertBtn3" onclick="UpdateOrderDetail()">Ok</button>
+
+                </form>
+            </dialog>
+
+
+            <!-- Modal -->
+            <!-- <div class="modal fade" id="orderNotifSuccess" tabindex="-1" aria-labelledby="orderNotifSuccessLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="orderNotifSuccessLabel">Modal title</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            ...
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+
+            <!-- Option 1: Bootstrap Bundle with Popper -->
+            <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+                crossorigin="anonymous"></script> -->
+
+            <!-- Button trigger modal -->
+            <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#orderNotifSuccess">
+                Launch demo modal
+            </button> -->
+            <button class="insertBtn2" id="btnXN">Xác nhận đặt món</button>
+        </div>
+    </div>
+    <script type="text/javascript" src="./js/main.js" type="module"></script>
+    <script>
+        window.addEventListener("keydown", handleRemoteKey);
+    </script>
+</body>
+
+</html>

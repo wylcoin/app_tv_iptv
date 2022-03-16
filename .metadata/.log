@@ -6075,3 +6075,38 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 !MESSAGE [2022.02.28 14:15:57][ERROR] TargetToolBarManager.java(394) - Failed to launch VM: Your system cannot support HW virtualization.
 Try install KVM (ubuntu) or HAX (windows or Mac)
 
+
+!ENTRY org.tizen.common.connection.toolbar.TargetToolBarManager 4 0 2022-02-28 15:47:44.898
+!MESSAGE [2022.02.28 15:47:44][ERROR] TargetToolBarManager.java(394) - Failed to launch VM: Your system cannot support HW virtualization.
+Try install KVM (ubuntu) or HAX (windows or Mac)
+
+
+!ENTRY org.tizen.common.connection.toolbar.TargetToolBarManager 4 0 2022-02-28 15:47:48.173
+!MESSAGE [2022.02.28 15:47:48][ERROR] TargetToolBarManager.java(394) - Failed to launch VM: Your system cannot support HW virtualization.
+Try install KVM (ubuntu) or HAX (windows or Mac)
+
+
+!ENTRY org.tizen.common.connection.toolbar.TargetToolBarManager 4 0 2022-02-28 15:47:54.004
+!MESSAGE [2022.02.28 15:47:54][ERROR] TargetToolBarManager.java(394) - Failed to launch VM: Your system cannot support HW virtualization.
+Try install KVM (ubuntu) or HAX (windows or Mac)
+
+
+!ENTRY org.tizen.common.connection.toolbar.TargetToolBarManager 4 0 2022-02-28 15:47:56.209
+!MESSAGE [2022.02.28 15:47:56][ERROR] TargetToolBarManager.java(394) - Failed to launch VM: Your system cannot support HW virtualization.
+Try install KVM (ubuntu) or HAX (windows or Mac)
+
+
+!ENTRY org.tizen.common.connection.toolbar.TargetToolBarManager 4 0 2022-02-28 15:47:58.381
+!MESSAGE [2022.02.28 15:47:58][ERROR] TargetToolBarManager.java(394) - Failed to launch VM: Your system cannot support HW virtualization.
+Try install KVM (ubuntu) or HAX (windows or Mac)
+
+
+!ENTRY org.tizen.common.connection.toolbar.TargetToolBarManager 4 0 2022-02-28 16:30:10.354
+!MESSAGE [2022.02.28 16:30:10][ERROR] TargetToolBarManager.java(394) - Failed to launch VM: Your system cannot support HW virtualization.
+Try install KVM (ubuntu) or HAX (windows or Mac)
+
+
+!ENTRY org.tizen.common.connection.toolbar.TargetToolBarManager 4 0 2022-02-28 16:30:13.246
+!MESSAGE [2022.02.28 16:30:13][ERROR] TargetToolBarManager.java(394) - Failed to launch VM: Your system cannot support HW virtualization.
+Try install KVM (ubuntu) or HAX (windows or Mac)
+
